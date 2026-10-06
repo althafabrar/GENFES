@@ -10,20 +10,21 @@
 
 :root {
 
-    --dark-navy: #111827;
-    --deep-blue: #1e1b4b;
+    --dark-navy: #12152a;
+    --deep-blue: #211b4b;
 
-    --purple: #7c3aed;
-    --violet: #8b5cf6;
-    --light-violet: #ede9fe;
+    --purple: #7656d6;
+    --violet: #9277e8;
+    --light-violet: #eeeafd;
+    --light-blue: #7aa8e8;
 
     --white: #ffffff;
-    --light-bg: #f8fafc;
+    --light-bg: #f8f9fc;
 
-    --text-dark: #111827;
-    --text-light: #64748b;
+    --text-dark: #171827;
+    --text-light: #737b91;
 
-    --border-light: rgba(255, 255, 255, 0.15);
+    --border-light: rgba(255, 255, 255, 0.12);
 
     --container-width: 1200px;
 
@@ -333,9 +334,10 @@ video {
 
     background:
         linear-gradient(90deg,
-            rgba(17, 24, 39, 0.97) 0%,
-            rgba(30, 27, 75, 0.88) 45%,
-            rgba(76, 29, 149, 0.48) 100%);
+            rgba(17, 20, 39, 0.96) 0%,
+            rgba(32, 27, 72, 0.88) 38%,
+            rgba(67, 48, 125, 0.68) 70%,
+            rgba(92, 70, 150, 0.42) 100%);
 
     z-index: -2;
 }
@@ -540,15 +542,14 @@ video {
     position: absolute;
 
     right: 0;
-
     top: 50%;
-
-    transform: translateY(-50%);
 
     width: 400px;
     height: 400px;
 
     pointer-events: none;
+
+    transform: translateY(-50%);
 }
 
 
@@ -586,7 +587,6 @@ video {
 /* ========================================
    HERO CARD / GENFES DECORATION
 ======================================== */
-
 .hero-card {
     position: absolute;
 
@@ -606,10 +606,7 @@ video {
     border-radius: 0;
 
     box-shadow: none;
-
-    animation: floatingGenfes 4s ease-in-out infinite;
 }
-
 
 /* Gambar Kalimat Genfes */
 
@@ -620,25 +617,6 @@ video {
     height: auto;
 
     object-fit: contain;
-}
-
-
-/* Animasi Melayang */
-
-@keyframes floatingGenfes {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
 }
 
 /* ========================================
@@ -1802,140 +1780,6 @@ video {
 
 }
 
-/* =========================
-   OUR SERVICES
-========================== */
-
-.services-section {
-    position: relative;
-    padding: 90px 0;
-
-    background:
-        radial-gradient(circle at 1px 1px,
-            rgba(255, 255, 255, 0.06) 1px,
-            transparent 1px),
-        linear-gradient(135deg,
-            #72003f,
-            #8b004b,
-            #6b003b);
-
-    background-size: 12px 12px, 100% 100%;
-
-    color: #ffffff;
-}
-
-
-/* Heading */
-
-.services-heading {
-    text-align: center;
-    margin-bottom: 38px;
-}
-
-.services-heading h2 {
-    margin: 0 0 8px;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.services-heading h2 span {
-    color: #ffffff;
-}
-
-.services-heading p {
-    margin: 0;
-    color: #f3dbea;
-    font-size: 12px;
-}
-
-
-/* Grid */
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
-
-
-/* Card */
-
-.service-card {
-    min-height: 220px;
-
-    padding: 25px 18px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    background: rgba(67, 0, 55, 0.55);
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-
-    border-radius: 6px;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-6px);
-
-    background: rgba(88, 0, 70, 0.75);
-
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-
-/* Icon */
-
-.service-icon {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 16px;
-
-    border-radius: 50%;
-
-    background: rgba(190, 24, 93, 0.25);
-
-    color: #ffffff;
-
-    font-size: 20px;
-}
-
-
-/* Title */
-
-.service-card h3 {
-    margin: 0 0 10px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    color: #ffffff;
-}
-
-
-/* Description */
-
-.service-card p {
-    margin: 0;
-
-    color: #efddea;
-
-    font-size: 10px;
-    line-height: 1.65;
-}
-
 
 /* =========================
    OUR SERVICES
@@ -2242,8 +2086,8 @@ video {
 
     background:
         linear-gradient(145deg,
-            rgba(49, 46, 129, 0.9),
-            rgba(37, 30, 90, 0.95));
+            rgba(58, 53, 135, 0.72),
+            rgba(40, 35, 102, 0.82));
 
     border: 1px solid rgba(167, 139, 250, 0.18);
 }
@@ -2566,12 +2410,13 @@ video {
 
     background:
         radial-gradient(circle at 1px 1px,
-            rgba(167, 139, 250, 0.12) 1px,
+            rgba(167, 139, 250, 0.10) 1px,
             transparent 1px),
         linear-gradient(135deg,
-            #17165c,
-            #24166f,
-            #312e81);
+            #18194f 0%,
+            #211b5d 45%,
+            #29216d 75%,
+            #312e81 100%);
 
     background-size: 12px 12px, 100% 100%;
 
@@ -3259,16 +3104,29 @@ video {
 .featured-event-card {
     display: grid;
 
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.1fr 0.9fr;
 
     overflow: hidden;
 
-    border-radius: 18px;
+    border: 1px solid rgba(23, 22, 92, 0.06);
+
+    border-radius: 20px;
 
     background: #ffffff;
 
     box-shadow:
-        0 20px 50px rgba(17, 20, 92, 0.10);
+        0 18px 45px rgba(17, 20, 92, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.featured-event-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 25px 55px rgba(17, 20, 92, 0.12);
 }
 
 
@@ -3278,6 +3136,8 @@ video {
     min-height: 420px;
 
     overflow: hidden;
+
+    background: #eeeafd;
 }
 
 
@@ -3327,7 +3187,7 @@ video {
 
     justify-content: center;
 
-    padding: 45px;
+    padding: 50px;
 }
 
 
@@ -3351,13 +3211,17 @@ video {
 
 
 .featured-event-content h3 {
-    margin: 0 0 15px;
+    margin: 0 0 16px;
 
     color: #17165c;
 
-    font-size: 28px;
+    font-family: "Playfair Display", serif;
 
-    line-height: 1.35;
+    font-size: 30px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
 }
 
 
@@ -3455,12 +3319,14 @@ video {
 .event-card {
     overflow: hidden;
 
-    border-radius: 16px;
+    border: 1px solid rgba(23, 22, 92, 0.06);
+
+    border-radius: 18px;
 
     background: #ffffff;
 
     box-shadow:
-        0 12px 35px rgba(17, 20, 92, 0.08);
+        0 10px 30px rgba(17, 20, 92, 0.06);
 
     transition:
         transform 0.3s ease,
@@ -3469,10 +3335,10 @@ video {
 
 
 .event-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
     box-shadow:
-        0 20px 45px rgba(17, 20, 92, 0.14);
+        0 18px 40px rgba(17, 20, 92, 0.11);
 }
 
 
@@ -3483,9 +3349,20 @@ video {
 .event-card-image {
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
 
+    padding: 12px;
+
     overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            #f1efff,
+            #f8f9fc);
 
     border-radius: 16px 16px 0 0;
 }
@@ -3619,26 +3496,35 @@ video {
 
 
 .program-card {
-    padding: 0;
+    padding: 28px;
 
     overflow: hidden;
 
     border: 1px solid rgba(167, 139, 250, 0.15);
 
-    border-radius: 16px;
+    border-radius: 18px;
 
-    background: rgba(49, 46, 129, 0.45);
+    background:
+        linear-gradient(145deg,
+            rgba(58, 53, 135, 0.72),
+            rgba(40, 35, 102, 0.82));
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
 .program-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
-    background: rgba(49, 46, 129, 0.75);
+    background:
+        linear-gradient(145deg,
+            rgba(67, 61, 151, 0.78),
+            rgba(45, 39, 113, 0.88));
+
+    border-color: rgba(167, 139, 250, 0.25);
 }
 
 
@@ -3655,13 +3541,17 @@ video {
 
     border-radius: 14px;
 
-    background: linear-gradient(135deg,
+    background:
+        linear-gradient(135deg,
             var(--purple),
             var(--violet));
 
     color: #ffffff;
 
     font-size: 21px;
+
+    box-shadow:
+        0 8px 20px rgba(118, 86, 214, 0.22);
 }
 
 
@@ -3670,7 +3560,13 @@ video {
 
     color: #ffffff;
 
-    font-size: 19px;
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
 }
 
 
@@ -3773,13 +3669,423 @@ video {
     }
 
 
-    .event-card-image {
+    /* .event-card-image {
         height: 210px;
-    }
+    } */
 
 
     .program-card {
         padding: 27px;
     }
 
+}
+
+/* ========================================
+   GENFES ANIMATION
+======================================== */
+
+/* ----------------------------------------
+   SCROLL REVEAL
+---------------------------------------- */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--animation-delay, 0s);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   ABOUT ANIMATION
+======================================== */
+
+.about-gallery.reveal-element {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.about-gallery.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-story.reveal-element {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.about-story.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-gallery,
+.about-story {
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Statistics */
+
+.stat-card.reveal-element {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+}
+
+.stat-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.stat-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+}
+
+/* Advantages */
+
+.advantage-card.reveal-element {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.advantage-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advantage-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+}
+
+/* Image hover */
+
+.about-image img {
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ----------------------------------------
+   STATISTICS
+---------------------------------------- */
+
+.stat-card.reveal-element {
+    transform: translateY(25px) scale(0.97);
+}
+
+.stat-card.reveal-visible {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ----------------------------------------
+   ADVANTAGES
+---------------------------------------- */
+
+.advantage-card.reveal-element {
+    transform: translateY(25px);
+}
+
+.advantage-card.reveal-visible {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   SERVICES ANIMATION
+======================================== */
+
+.service-card.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* ----------------------------------------
+   ADVANTAGE HOVER
+---------------------------------------- */
+
+.advantage-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ----------------------------------------
+   STAT HOVER
+---------------------------------------- */
+
+.stat-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ----------------------------------------
+   ABOUT IMAGE
+---------------------------------------- */
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-image img {
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ----------------------------------------
+   HERO CONTENT
+---------------------------------------- */
+
+.hero-content {
+    animation:
+        heroContentIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ----------------------------------------
+   HERO DECORATION
+---------------------------------------- */
+
+.circle-one {
+    animation:
+        softFloatOne 6s ease-in-out infinite;
+}
+
+.circle-two {
+    animation:
+        softFloatTwo 8s ease-in-out infinite;
+}
+
+.hero-card {
+    animation:
+        softFloatCard 5s ease-in-out infinite;
+}
+
+
+/* ----------------------------------------
+   CIRCLE ONE
+---------------------------------------- */
+
+@keyframes softFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   CIRCLE TWO
+---------------------------------------- */
+
+@keyframes softFloatTwo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   GENFES LOGO
+---------------------------------------- */
+
+@keyframes softFloatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   BUTTON
+---------------------------------------- */
+
+.btn,
+.contact-cta-button,
+.event-read-more {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover,
+.contact-cta-button:hover,
+.event-read-more:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ----------------------------------------
+   SCROLL INDICATOR
+---------------------------------------- */
+
+.scroll-indicator i {
+    animation:
+        scrollArrow 2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+
+}
+
+
+/* ----------------------------------------
+   NAVBAR
+---------------------------------------- */
+
+.navbar {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        backdrop-filter 0.35s ease;
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(17, 24, 39, 0.12);
+}
+
+
+/* ----------------------------------------
+   VIDEO MODAL
+---------------------------------------- */
+
+.video-modal {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.video-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-modal-content {
+    transform:
+        scale(0.96) translateY(15px);
+
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.video-modal.active .video-modal-content {
+    transform:
+        scale(1) translateY(0);
+}
+
+
+/* ----------------------------------------
+   BODY MODAL
+---------------------------------------- */
+
+body.modal-open {
+    overflow: hidden;
 }

@@ -2606,20 +2606,21 @@ video {
 .article-body h1,
 .article-body .article-meta,
 .article-body p {
-    opacity: 0;
-    transform: translateY(22px);
+    opacity: 1;
+    transform: translateY(0);
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
 }
 
-/* Teks aktif saat artikel dibuka */
+/* Animasi saat artikel dibuka */
 .article-detail.text-animated .article-body h1,
 .article-detail.text-animated .article-body .article-meta,
 .article-detail.text-animated .article-body p {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 /* Animasi bertahap */
 .article-detail.text-animated .article-body h1 {
@@ -4474,3 +4475,30 @@ body.modal-open {
     position: relative;
     z-index: 1;
 }
+
+```css @media (max-width: 768px) {
+    .article-detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .article-body {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    .article-body h1,
+    .article-body .article-meta,
+    .article-body p {
+        display: block;
+        visibility: visible;
+        color: #333;
+    }
+}
+
+```

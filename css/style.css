@@ -1434,6 +1434,32 @@ video {
 
 }
 
+
+/* ========================================
+   ABOUT STORY - TYPEWRITER
+======================================== */
+
+
+/* Teks terlihat secara default */
+.about-story .story-label,
+.about-story h2,
+.about-story p {
+    opacity: 1;
+}
+
+@keyframes typingCursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Menghormati pengaturan pengurangan animasi */
+@media (prefers-reduced-motion: reduce) {
+    .about-story .typing-active::after {
+        animation: none;
+    }
+}
+
 /* =========================
    ABOUT GENFES
 ========================== */
@@ -1616,6 +1642,14 @@ video {
 }
 
 
+
+/* Statistics number animation */
+
+.stat-card strong {
+    display: block;
+    font-variant-numeric: tabular-nums;
+}
+
 /* Statistics */
 
 .about-statistics {
@@ -1794,6 +1828,33 @@ video {
     }
 
 }
+
+
+/* ========================================
+   SERVICES - LEFT TO RIGHT ANIMATION
+======================================== */
+
+.services-section .service-card {
+    opacity: 0;
+    transform: translateX(-40px);
+
+    transition:
+        opacity 2s ease,
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--service-delay, 0ms);
+}
+
+.services-section .service-card.service-card-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pertahankan efek hover setelah kartu masuk */
+.services-section .service-card.service-card-visible:hover {
+    transform: translateY(-6px);
+}
+
 
 
 /* =========================

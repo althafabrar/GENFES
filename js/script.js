@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .about-statistics,
         .about-advantages,
         .services-heading,
-        .service-card,
         .contact-cta-content
         `
     );
@@ -198,22 +197,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+
     /* ========================================
-       SERVICE CARD STAGGER
+       SERVICE CARD - LEFT TO RIGHT
     ======================================== */
 
+    const serviceSection = document.querySelector(".services-section");
     const serviceCards = document.querySelectorAll(
-        ".service-card"
+        ".services-section .service-card"
     );
 
-    serviceCards.forEach((card, index) => {
+    if (serviceSection && serviceCards.length) {
+        serviceCards.forEach((card, index) => {
+            card.style.setProperty(
+                "--service-delay",
+                `${index * 180}ms`
+            );
+        });
 
-        card.style.setProperty(
-            "--animation-delay",
-            `${index * 0.12}s`
-        );
+        const serviceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
 
-    });
+                serviceCards.forEach((card) => {
+                    card.classList.add("service-card-visible");
+                });
+
+                serviceObserver.disconnect();
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        serviceObserver.observe(serviceSection);
+    }
 
 
     /* ========================================
@@ -461,3 +478,146 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+
+/* ========================================
+   STATISTICS NUMBER SCRAMBLE
+======================================== */
+
+const statNumbers = document.querySelectorAll(".stat-card strong");
+
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const element = entry.target;
+
+        // Supaya animasi tidak berulang setiap scroll
+        if (element.dataset.animated === "true") return;
+
+        element.dataset.animated = "true";
+
+        const originalText = element.textContent.trim();
+        const digits = originalText.match(/\d/g);
+        const duration = 3000;
+        const startTime = performance.now();
+
+        if (!digits) return;
+
+        function scrambleNumber(currentTime) {
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            // Semakin mendekati akhir, semakin banyak angka asli muncul
+            const revealedDigits = Math.floor(
+                progress * digits.length
+            );
+
+            let digitIndex = 0;
+
+            const scrambledText = originalText.replace(/\d/g, () => {
+                const originalDigit = digits[digitIndex];
+                const currentIndex = digitIndex++;
+
+                if (progress === 1 ||
+                    currentIndex < revealedDigits) {
+                    return originalDigit;
+                }
+
+                return Math.floor(Math.random() * 10);
+            });
+
+            element.textContent = scrambledText;
+
+            if (progress < 1) {
+                requestAnimationFrame(scrambleNumber);
+            } else {
+                // Pastikan angka, koma, dan tanda + kembali persis
+                element.textContent = originalText;
+            }
+        }
+
+        requestAnimationFrame(scrambleNumber);
+    });
+}, {
+    threshold: 0.5
+});
+
+statNumbers.forEach((number) => {
+    statObserver.observe(number);
+});
+
+
+/* ========================================
+   ABOUT STORY - TYPEWRITER
+======================================== */
+
+const aboutStory = document.querySelector(".about-story");
+
+if (aboutStory) {
+    const storyLabel = aboutStory.querySelector(".story-label");
+    const storyTitle = aboutStory.querySelector("h2");
+    const storyParagraphs = aboutStory.querySelectorAll("p");
+
+    const elementsToType = [
+        storyLabel,
+        storyTitle,
+        ...storyParagraphs
+    ].filter(Boolean);
+
+    const originalTexts = elementsToType.map(element =>
+        element.textContent.replace(/\s+/g, " ").trim()
+    );
+
+    let storyStarted = false;
+
+    // Simpan teks asli, lalu kosongkan untuk efek mengetik
+    elementsToType.forEach(element => {
+        element.textContent = "";
+        element.classList.add("typing-active");
+    });
+
+    const storyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting || storyStarted) return;
+
+            storyStarted = true;
+
+            let elementIndex = 0;
+            let charIndex = 0;
+
+            function typeNextCharacter() {
+                if (elementIndex >= elementsToType.length) {
+                    elementsToType.forEach(element => {
+                        element.classList.remove("typing-active");
+                    });
+                    storyObserver.disconnect();
+                    return;
+                }
+
+                const element = elementsToType[elementIndex];
+                const text = originalTexts[elementIndex];
+
+                element.textContent += text.charAt(charIndex);
+                charIndex++;
+
+                if (charIndex >= text.length) {
+                    elementIndex++;
+                    charIndex = 0;
+
+                    // Jeda singkat sebelum mengetik elemen berikutnya
+                    setTimeout(typeNextCharacter, 150);
+                } else {
+                    setTimeout(typeNextCharacter, 5);
+                }
+            }
+
+            typeNextCharacter();
+        });
+    }, { threshold: 0.2 });
+
+    storyObserver.observe(aboutStory);
+}
+

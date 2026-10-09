@@ -142,7 +142,7 @@ video {
 .logo img {
     display: block;
     width: 100px;
-    margin-left: 50px;
+    margin-left: 25px;
     height: auto;
 }
 
@@ -2596,6 +2596,274 @@ video {
         font-size: 11px;
     }
 
+}
+
+
+/* =========================
+   ARTICLE TEXT ANIMATION
+========================= */
+
+.article-body h1,
+.article-body .article-meta,
+.article-body p {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Teks aktif saat artikel dibuka */
+.article-detail.text-animated .article-body h1,
+.article-detail.text-animated .article-body .article-meta,
+.article-detail.text-animated .article-body p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi bertahap */
+.article-detail.text-animated .article-body h1 {
+    transition-delay: 0.15s;
+}
+
+.article-detail.text-animated .article-body .article-intro {
+    transition-delay: 0.3s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(2) {
+    transition-delay: 0.45s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(4) {
+    transition-delay: 0.75s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .article-body h1,
+    .article-body .article-meta,
+    .article-body p {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* =========================
+   ARTICLE DETAIL LAYOUT
+========================= */
+
+.article-detail[hidden] {
+    display: none !important;
+}
+
+.article-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: articleFadeIn 0.45s ease;
+}
+
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 12px 18px;
+    border: 1px solid #e5e1dc;
+    border-radius: 8px;
+    background: transparent;
+    color: #333;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.article-back:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* FOTO DI KIRI */
+
+.article-detail-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 48px;
+}
+
+.article-slideshow {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f1f1f1;
+}
+
+.article-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.article-slide.active {
+    opacity: 1;
+}
+
+.article-slide-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 45px 24px 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
+/* ARTIKEL DI KANAN */
+
+.article-body {
+    min-width: 0;
+    margin: 0;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.article-body h1 {
+    margin: 0 0 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.3;
+}
+
+.article-body p {
+    margin: 0 0 18px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.article-body .article-intro {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ANIMASI TEKS */
+
+.article-body h1,
+.article-body .article-meta,
+.article-body p {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.article-detail.text-animated .article-body h1,
+.article-detail.text-animated .article-body .article-meta,
+.article-detail.text-animated .article-body p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.article-detail.text-animated .article-body h1 {
+    transition-delay: 0.15s;
+}
+
+.article-detail.text-animated .article-body .article-intro {
+    transition-delay: 0.3s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(2) {
+    transition-delay: 0.45s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(4) {
+    transition-delay: 0.75s;
+}
+
+@keyframes articleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET DAN HP */
+
+@media (max-width: 768px) {
+    .article-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .article-slideshow {
+        height: 350px;
+    }
+
+    .article-body {
+        margin-top: 0;
+    }
+
+    .article-body h1 {
+        font-size: 30px;
+    }
+
+    .article-body p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-slideshow {
+        height: 260px;
+    }
+
+    .article-body h1 {
+        font-size: 26px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .article-body h1,
+    .article-body .article-meta,
+    .article-body p {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* ========================================

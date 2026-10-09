@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
     /* ========================================
        SERVICE CARD - LEFT TO RIGHT
     ======================================== */
@@ -211,19 +212,21 @@ document.addEventListener("DOMContentLoaded", () => {
         serviceCards.forEach((card, index) => {
             card.style.setProperty(
                 "--service-delay",
-                `${index * 180}ms`
+                `${index * 250}ms`
             );
         });
 
         const serviceObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-
-                serviceCards.forEach((card) => {
-                    card.classList.add("service-card-visible");
-                });
-
-                serviceObserver.disconnect();
+                if (entry.isIntersecting) {
+                    serviceCards.forEach((card) => {
+                        card.classList.add("service-card-visible");
+                    });
+                } else {
+                    serviceCards.forEach((card) => {
+                        card.classList.remove("service-card-visible");
+                    });
+                }
             });
         }, {
             threshold: 0.15
@@ -480,6 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 /* ========================================
    STATISTICS NUMBER SCRAMBLE
 ======================================== */
@@ -488,29 +492,37 @@ const statNumbers = document.querySelectorAll(".stat-card strong");
 
 const statObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
         const element = entry.target;
 
-        // Supaya animasi tidak berulang setiap scroll
+        if (!entry.isIntersecting) {
+            element.dataset.animated = "false";
+            return;
+        }
+
         if (element.dataset.animated === "true") return;
 
         element.dataset.animated = "true";
 
-        const originalText = element.textContent.trim();
+        const originalText =
+            element.dataset.originalText ||
+            element.textContent.trim();
+
+        element.dataset.originalText = originalText;
+
         const digits = originalText.match(/\d/g);
+        if (!digits) return;
+
         const duration = 3000;
         const startTime = performance.now();
 
-        if (!digits) return;
-
         function scrambleNumber(currentTime) {
+            if (element.dataset.animated !== "true") return;
+
             const progress = Math.min(
                 (currentTime - startTime) / duration,
                 1
             );
 
-            // Semakin mendekati akhir, semakin banyak angka asli muncul
             const revealedDigits = Math.floor(
                 progress * digits.length
             );
@@ -521,8 +533,10 @@ const statObserver = new IntersectionObserver((entries) => {
                 const originalDigit = digits[digitIndex];
                 const currentIndex = digitIndex++;
 
-                if (progress === 1 ||
-                    currentIndex < revealedDigits) {
+                if (
+                    progress === 1 ||
+                    currentIndex < revealedDigits
+                ) {
                     return originalDigit;
                 }
 
@@ -534,7 +548,6 @@ const statObserver = new IntersectionObserver((entries) => {
             if (progress < 1) {
                 requestAnimationFrame(scrambleNumber);
             } else {
-                // Pastikan angka, koma, dan tanda + kembali persis
                 element.textContent = originalText;
             }
         }
@@ -546,8 +559,10 @@ const statObserver = new IntersectionObserver((entries) => {
 });
 
 statNumbers.forEach((number) => {
+    number.dataset.originalText = number.textContent.trim();
     statObserver.observe(number);
 });
+
 
 
 /* ========================================
@@ -571,53 +586,154 @@ if (aboutStory) {
         element.textContent.replace(/\s+/g, " ").trim()
     );
 
-    let storyStarted = false;
+    let typingTimer = null;
+    let typingRun = 0;
+    let isTyping = false;
 
-    // Simpan teks asli, lalu kosongkan untuk efek mengetik
-    elementsToType.forEach(element => {
-        element.textContent = "";
-        element.classList.add("typing-active");
-    });
+    function resetStory() {
+        typingRun++;
+
+        if (typingTimer !== null) {
+            clearTimeout(typingTimer);
+            typingTimer = null;
+        }
+
+        isTyping = false;
+
+        elementsToType.forEach(element => {
+            element.textContent = "";
+            element.classList.add("typing-active");
+        });
+    }
+
+    function startTyping() {
+        if (isTyping) return;
+
+        isTyping = true;
+
+        const currentRun = ++typingRun;
+        let elementIndex = 0;
+        let charIndex = 0;
+
+        function typeNextCharacter() {
+            if (currentRun !== typingRun) return;
+
+            if (elementIndex >= elementsToType.length) {
+                elementsToType.forEach(element => {
+                    element.classList.remove("typing-active");
+                });
+
+                isTyping = false;
+                typingTimer = null;
+                return;
+            }
+
+            const element = elementsToType[elementIndex];
+            const text = originalTexts[elementIndex];
+
+            element.textContent += text.charAt(charIndex);
+            charIndex++;
+
+            if (charIndex >= text.length) {
+                elementIndex++;
+                charIndex = 0;
+
+                typingTimer = setTimeout(typeNextCharacter, 150);
+            } else {
+                typingTimer = setTimeout(typeNextCharacter, 2);
+            }
+        }
+
+        typeNextCharacter();
+    }
+
+    resetStory();
 
     const storyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting || storyStarted) return;
-
-            storyStarted = true;
-
-            let elementIndex = 0;
-            let charIndex = 0;
-
-            function typeNextCharacter() {
-                if (elementIndex >= elementsToType.length) {
-                    elementsToType.forEach(element => {
-                        element.classList.remove("typing-active");
-                    });
-                    storyObserver.disconnect();
-                    return;
-                }
-
-                const element = elementsToType[elementIndex];
-                const text = originalTexts[elementIndex];
-
-                element.textContent += text.charAt(charIndex);
-                charIndex++;
-
-                if (charIndex >= text.length) {
-                    elementIndex++;
-                    charIndex = 0;
-
-                    // Jeda singkat sebelum mengetik elemen berikutnya
-                    setTimeout(typeNextCharacter, 150);
-                } else {
-                    setTimeout(typeNextCharacter, 5);
-                }
+            if (entry.isIntersecting) {
+                startTyping();
+            } else {
+                resetStory();
             }
-
-            typeNextCharacter();
         });
-    }, { threshold: 0.2 });
+    }, {
+        threshold: 0.2
+    });
 
     storyObserver.observe(aboutStory);
 }
 
+
+// =========================
+// NEWS ARTICLE DETAIL
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+    const newsList = document.getElementById("newsList");
+    const articleDetail = document.getElementById("articleDetail");
+    const readArticle = document.getElementById("readArticle");
+    const backToNews = document.getElementById("backToNews");
+    const slides = document.querySelectorAll(".article-slide");
+
+    if (
+        !newsList ||
+        !articleDetail ||
+        !readArticle ||
+        !backToNews
+    ) {
+        return;
+    }
+
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function showArticle() {
+        newsList.hidden = true;
+        articleDetail.hidden = false;
+
+        currentSlide = 0;
+        updateSlide();
+
+        // Mulai slideshow, foto berganti setiap 4 detik
+        clearInterval(slideInterval);
+
+        if (slides.length > 1) {
+            slideInterval = setInterval(function () {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide();
+            }, 4000);
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    function updateSlide() {
+        slides.forEach(function (slide, index) {
+            slide.classList.toggle("active", index === currentSlide);
+        });
+    }
+
+    function hideArticle() {
+        clearInterval(slideInterval);
+        slideInterval = null;
+
+        articleDetail.hidden = true;
+        newsList.hidden = false;
+
+        window.scrollTo({
+            top: newsList.offsetTop - 100,
+            behavior: "smooth"
+        });
+    }
+
+    readArticle.addEventListener("click", function (event) {
+        event.preventDefault();
+        showArticle();
+    });
+
+    backToNews.addEventListener("click", hideArticle);
+});

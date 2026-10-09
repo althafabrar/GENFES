@@ -94,11 +94,22 @@
     <!-- =========================
          NEWS HERO
     ========================== -->
-
     <main>
 
         <section class="news-hero">
 
+            <!-- Background Video -->
+            <div class="news-hero-background">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/vidio-bg2.MP4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+            </div>
+
+            <!-- Overlay -->
+            <div class="news-hero-overlay"></div>
+
+            <!-- Content -->
             <div class="container">
 
                 <div class="news-hero-content">
@@ -124,293 +135,296 @@
 
         </section>
 
+    </main>
 
-        <!-- =========================
+
+
+    <!-- =========================
              NEWS & ARTICLE
         ========================== -->
 
-        <section class="news-featured">
+    <section class="news-featured">
 
-            <div class="container">
+        <div class="container">
 
-                <!-- DAFTAR BERITA -->
-                <div id="newsList">
+            <!-- DAFTAR BERITA -->
+            <div id="newsList">
 
-                    <div class="news-section-heading">
-                        <div>
-                            <span class="section-label">BERITA TERBARU</span>
-                            <h2>Kabar <span>Genfes.</span></h2>
-                        </div>
+                <div class="news-section-heading">
+                    <div>
+                        <span class="section-label">BERITA TERBARU</span>
+                        <h2>Kabar <span>Genfes.</span></h2>
                     </div>
-
-                    <article class="featured-news-card">
-
-                        <div class="featured-news-image">
-                            <img src="assets/images/artikel-1.jpg" alt="Berita GENFES 2026">
-                        </div>
-
-                        <div class="featured-news-content">
-
-                            <span class="news-category">Kegiatan</span>
-                            <span class="news-date">10 Oktober 2026</span>
-
-                            <h3>GENFES 2026 Resmi Diluncurkan</h3>
-
-                            <p>
-                                Dari Ide Menjadi Aksi, GENFES "Generation of
-                                Futurepreneur Society" 2026 mendorong generasi
-                                muda untuk bertumbuh, berkolaborasi, dan
-                                berinovasi dalam menciptakan dampak positif
-                                bagi masyarakat dan masa depan.
-                            </p>
-
-                            <a href="#artikel-genfes" class="news-read-more" id="readArticle">
-
-                                Baca Selengkapnya
-                                <i class="bi bi-arrow-right"></i>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
                 </div>
 
-                <!-- DETAIL ARTIKEL -->
-                <article id="articleDetail" class="article-detail" hidden> <button type="button" id="backToNews"
-                        class="article-back"> <i class="bi bi-arrow-left"></i> Kembali ke Berita </button>
-                    <div class="article-detail-layout">
-                        <!-- FOTO DI KIRI -->
-                        <div class="article-slideshow"> <img src="assets/images/artikel-1.jpg"
-                                alt="Peluncuran GENFES 2026" class="article-slide active"> <img
-                                src="assets/images/artikel-2.jpg" alt="Kegiatan GENFES 2026" class="article-slide">
-                            <div class="article-slide-caption"> GENFES 2026 </div>
-                        </div> <!-- TEKS DI KANAN -->
-                        <div class="article-body">
+                <article class="featured-news-card">
 
-                            <div class="article-meta">
-                                <span class="news-category">Kegiatan</span>
-                                <span class="news-date">10 Oktober 2026</span>
-                            </div>
+                    <div class="featured-news-image">
+                        <img src="assets/images/artikel-1.jpg" alt="Berita GENFES 2026">
+                    </div>
 
-                            <h1>
-                                GENFES 2026 Resmi Diluncurkan
-                            </h1>
+                    <div class="featured-news-content">
 
-                            <p>
-                                Surabaya, 10 Oktober 2026 — Generation of Futurepreneur Society (GENFES) akan menggelar
-                                Kick-Off GENFES 2026 pada Sabtu, 10 Oktober 2026, bertempat di Mozz Hotel Surabaya.
-                                Kegiatan
-                                ini menjadi momentum peluncuran GENFES sebagai ruang bagi generasi muda untuk bertumbuh,
-                                berkolaborasi, berinovasi, dan mengambil peran dalam menciptakan masa depan yang lebih
-                                baik.
-                                Mengusung semangat pengembangan potensi generasi muda, peluncuran GENFES menjadi langkah
-                                awal dalam membangun ekosistem yang mendorong anak muda untuk terus belajar, memperluas
-                                koneksi, mengembangkan kreativitas, serta mengubah ide menjadi aksi nyata.
-                            </p>
+                        <span class="news-category">Kegiatan</span>
+                        <span class="news-date">10 Oktober 2026</span>
 
-                            <p>
-                                Melalui GENFES, generasi muda diharapkan dapat menemukan ruang untuk mengeksplorasi
-                                potensi
-                                diri, membangun kolaborasi lintas bidang, dan mengembangkan wawasan di bidang
-                                pendidikan,
-                                kewirausahaan, serta literasi digital.
-                                Kick-Off GENFES 2026 tidak hanya menjadi penanda dimulainya perjalanan GENFES, tetapi
-                                juga
-                                menjadi ajakan bagi generasi muda untuk berani mengambil peluang, menciptakan inovasi,
-                                dan
-                                berkontribusi secara positif bagi lingkungan sekitarnya.
-                            </p>
+                        <h3>GENFES 2026 Resmi Diluncurkan</h3>
 
-                            <p>
-                                Dengan semangat Grow, Explore, Network, Futurepreneur, dan Social Impact, GENFES
-                                berkomitmen
-                                untuk menjadi bagian dari perjalanan generasi muda dalam mempersiapkan diri menghadapi
-                                tantangan masa depan.
-                                Peluncuran ini menjadi langkah pertama dari perjalanan yang lebih besar. GENFES percaya
-                                bahwa masa depan tidak hanya untuk ditunggu, tetapi untuk dibangun bersama melalui ide,
-                                kolaborasi, dan aksi nyata.
-                            </p>
+                        <p>
+                            Dari Ide Menjadi Aksi, GENFES "Generation of
+                            Futurepreneur Society" 2026 mendorong generasi
+                            muda untuk bertumbuh, berkolaborasi, dan
+                            berinovasi dalam menciptakan dampak positif
+                            bagi masyarakat dan masa depan.
+                        </p>
 
-                        </div>
+                        <a href="#artikel-genfes" class="news-read-more" id="readArticle">
+
+                            Baca Selengkapnya
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
 
                 </article>
 
             </div>
 
-        </section>
+            <!-- DETAIL ARTIKEL -->
+            <article id="articleDetail" class="article-detail" hidden> <button type="button" id="backToNews"
+                    class="article-back"> <i class="bi bi-arrow-left"></i> Kembali ke Berita </button>
+                <div class="article-detail-layout">
+                    <!-- FOTO DI KIRI -->
+                    <div class="article-slideshow"> <img src="assets/images/artikel-1.jpg" alt="Peluncuran GENFES 2026"
+                            class="article-slide active"> <img src="assets/images/artikel-2.jpg"
+                            alt="Kegiatan GENFES 2026" class="article-slide">
+                        <div class="article-slide-caption"> GENFES 2026 </div>
+                    </div> <!-- TEKS DI KANAN -->
+                    <div class="article-body">
+
+                        <div class="article-meta">
+                            <span class="news-category">Kegiatan</span>
+                            <span class="news-date">10 Oktober 2026</span>
+                        </div>
+
+                        <h1>
+                            GENFES 2026 Resmi Diluncurkan
+                        </h1>
+
+                        <p>
+                            Surabaya, 10 Oktober 2026 — Generation of Futurepreneur Society (GENFES) akan menggelar
+                            Kick-Off GENFES 2026 pada Sabtu, 10 Oktober 2026, bertempat di Mozz Hotel Surabaya.
+                            Kegiatan
+                            ini menjadi momentum peluncuran GENFES sebagai ruang bagi generasi muda untuk bertumbuh,
+                            berkolaborasi, berinovasi, dan mengambil peran dalam menciptakan masa depan yang lebih
+                            baik.
+                            Mengusung semangat pengembangan potensi generasi muda, peluncuran GENFES menjadi langkah
+                            awal dalam membangun ekosistem yang mendorong anak muda untuk terus belajar, memperluas
+                            koneksi, mengembangkan kreativitas, serta mengubah ide menjadi aksi nyata.
+                        </p>
+
+                        <p>
+                            Melalui GENFES, generasi muda diharapkan dapat menemukan ruang untuk mengeksplorasi
+                            potensi
+                            diri, membangun kolaborasi lintas bidang, dan mengembangkan wawasan di bidang
+                            pendidikan,
+                            kewirausahaan, serta literasi digital.
+                            Kick-Off GENFES 2026 tidak hanya menjadi penanda dimulainya perjalanan GENFES, tetapi
+                            juga
+                            menjadi ajakan bagi generasi muda untuk berani mengambil peluang, menciptakan inovasi,
+                            dan
+                            berkontribusi secara positif bagi lingkungan sekitarnya.
+                        </p>
+
+                        <p>
+                            Dengan semangat Grow, Explore, Network, Futurepreneur, dan Social Impact, GENFES
+                            berkomitmen
+                            untuk menjadi bagian dari perjalanan generasi muda dalam mempersiapkan diri menghadapi
+                            tantangan masa depan.
+                            Peluncuran ini menjadi langkah pertama dari perjalanan yang lebih besar. GENFES percaya
+                            bahwa masa depan tidak hanya untuk ditunggu, tetapi untuk dibangun bersama melalui ide,
+                            kolaborasi, dan aksi nyata.
+                        </p>
+
+                    </div>
+
+            </article>
+
+        </div>
+
+    </section>
 
 
-        <!-- =========================
+    <!-- =========================
          FOOTER
     ========================== -->
 
-        <footer class="footer">
+    <footer class="footer">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="footer-main">
+            <div class="footer-main">
 
 
-                    <!-- Brand -->
+                <!-- Brand -->
 
-                    <div class="footer-brand">
+                <div class="footer-brand">
 
-                        <a href="index.html" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
 
-                            <img src="assets/images/LOGO-sub.jpg" alt="Genfes">
+                        <img src="assets/images/LOGO-sub.jpg" alt="Genfes">
 
+                    </a>
+
+                    <p>
+                        Grow Together,
+                        <br>
+                        Lead the Future.
+                    </p>
+
+
+                    <div class="footer-social">
+
+                        <a href="https://www.instagram.com/genfes.id?psln=czl1MTFnMGoxdGQ2" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
                         </a>
 
-                        <p>
-                            Menciptakan pengalaman inovatif dan
-                            acara yang berkesan melalui kreativitas,
-                            profesionalisme, dan semangat.
-                        </p>
-
-
-                        <div class="footer-social">
-
-                            <a href="https://www.instagram.com/genfes.id?psln=czl1MTFnMGoxdGQ2" aria-label="Instagram">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-
-                            <a href="#" aria-label="TikTok">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- Quick Links -->
-
-                    <div class="footer-column">
-
-                        <h3>
-                            Tautan
-                        </h3>
-
-                        <a href="index.html#home">
-                            Home
-                        </a>
-
-                        <a href="index.html#about">
-                            What We Do
-                        </a>
-
-                        <a href="news.html">
-                            News & Article
-                        </a>
-
-                        <a href="events.html">
-                            Event & Programs
-                        </a>
-
-                        <a href="index.html#contact">
-                            Contact
+                        <a href="#" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
                         </a>
 
                     </div>
-
-
-
-                    <!-- Services -->
-
-                    <div class="footer-column">
-
-                        <h3>
-                            Informasi
-                        </h3>
-
-                        <a href="#">
-                            Berita Terbaru
-                        </a>
-
-                        <a href="#">
-                            Kegiatan
-                        </a>
-
-                        <a href="#">
-                            Program
-                        </a>
-
-                        <a href="#">
-                            Inovasi
-                        </a>
-
-                    </div>
-
-
-
-                    <!-- Contact -->
-
-                    <div class="footer-column footer-contact">
-
-                        <h3>
-                            Hubungi Kami
-                        </h3>
-
-                        <a href="mailto:genfes@gmail.com">
-
-                            <i class="bi bi-envelope"></i>
-
-                            genfes@gmail.com
-
-                        </a>
-
-                        <a href="https://maps.app.goo.gl/ab35qtDfxD16PJ2U9">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            Jl. Barata Jaya IV No.34, Baratajaya, Kec. Gubeng, Surabaya, Jawa Timur 60284
-
-                        </a>
-
-                        <a href="tel:+6281234567890">
-
-                            <i class="bi bi-telephone"></i>
-
-                            +62 812 3456 7890
-
-                        </a>
-
-                    </div>
-
 
                 </div>
 
 
-                <div class="footer-bottom">
 
-                    <p>
-                        © 2026 Genfes. All Rights Reserved.
-                    </p>
+                <!-- Quick Links -->
 
-                    <div class="footer-bottom-links">
+                <div class="footer-column">
 
-                        <a href="#">
-                            Privacy Policy
-                        </a>
+                    <h3>
+                        Tautan
+                    </h3>
 
-                        <a href="#">
-                            Terms & Conditions
-                        </a>
+                    <a href="index.html#home">
+                        Home
+                    </a>
 
-                    </div>
+                    <a href="index.html#about">
+                        What We Do
+                    </a>
+
+                    <a href="news.html">
+                        News & Article
+                    </a>
+
+                    <a href="events.html">
+                        Event & Programs
+                    </a>
+
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+
+
+                <!-- Services -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Informasi
+                    </h3>
+
+                    <a href="#">
+                        Berita Terbaru
+                    </a>
+
+                    <a href="#">
+                        Kegiatan
+                    </a>
+
+                    <a href="#">
+                        Program
+                    </a>
+
+                    <a href="#">
+                        Inovasi
+                    </a>
+
+                </div>
+
+
+
+                <!-- Contact -->
+
+                <div class="footer-column footer-contact">
+
+                    <h3>
+                        Hubungi Kami
+                    </h3>
+
+                    <a href="mailto:genfes@gmail.com">
+
+                        <i class="bi bi-envelope"></i>
+
+                        genfes@gmail.com
+
+                    </a>
+
+                    <a href="https://maps.app.goo.gl/ab35qtDfxD16PJ2U9">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        Jl. Barata Jaya IV No.34, Baratajaya, Kec. Gubeng, Surabaya, Jawa Timur 60284
+
+                    </a>
+
+                    <a href="tel:+6281234567890">
+
+                        <i class="bi bi-telephone"></i>
+
+                        +62 812 3456 7890
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Genfes. All Rights Reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
 
                 </div>
 
             </div>
 
-        </footer>
+        </div>
+
+    </footer>
 
 
 
-        <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

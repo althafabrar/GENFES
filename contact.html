@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +10,6 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
@@ -21,81 +19,59 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR -->
     <header class="navbar" id="navbar">
-
         <div class="container navbar-container">
 
-            <a href="index.html" class="logo">
-                GEN<span>FES</span>
+            <!-- Logo -->
+            <a href="index.html#home" class="logo">
+                <img src="assets/images/LOGO-sub.jpg" alt="Genfes">
             </a>
 
-            <!-- Desktop Navigation -->
+            <!-- Navigation -->
             <nav class="nav-menu" id="navMenu">
-
-                <a href="index.html#home" class="nav-link">
-                    Home
-                </a>
-
-                <a href="index.html#about" class="nav-link">
-                    What We Do
-                </a>
-
-                <a href="news.html" class="nav-link">
-                    News & Article
-                </a>
-
-                <a href="events.html" class="nav-link">
-                    Event & Programs
-                </a>
-
-                <a href="contact.html" class="nav-link active">
-                    Contact
-                </a>
-
-                <a href="#" class="nav-login">
-                    Masuk
-                </a>
-
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">What We Do</a>
+                <a href="news.html" class="nav-link">News &amp; Article</a>
+                <a href="events.html" class="nav-link">Event &amp; Programs</a>
+                <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+                <a href="#" class="nav-login">Masuk</a>
             </nav>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navMenu"
+                aria-expanded="false">
                 <i class="bi bi-list"></i>
             </button>
 
         </div>
-
     </header>
 
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
+    <!-- MAIN CONTENT -->
     <main>
 
+        <!-- CONTACT SECTION -->
         <section class="contact-section contact-page" id="contact">
 
+            <!-- Background Video -->
+            <div class="contact-background" aria-hidden="true">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/vidio-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Video Overlay -->
+            <div class="contact-overlay" aria-hidden="true"></div>
+
+            <!-- Contact Content -->
             <div class="container">
 
-
                 <!-- Heading -->
-
                 <div class="contact-heading">
-
-                    <span>
-                        GET IN TOUCH
-                    </span>
+                    <span>GET IN TOUCH</span>
 
                     <h2>
                         Let's create something
@@ -106,25 +82,16 @@
                         Have an event in mind? Tell us about your idea
                         and let our team help bring it to life.
                     </p>
-
                 </div>
 
-
-
-                <!-- Contact Content -->
-
+                <!-- Contact Wrapper -->
                 <div class="contact-wrapper">
 
-
                     <!-- Contact Information -->
-
                     <div class="contact-info">
 
                         <div class="contact-info-header">
-
-                            <h3>
-                                Let's Talk
-                            </h3>
+                            <h3>Let's Talk</h3>
 
                             <p>
                                 Whether you're planning an event,
@@ -132,370 +99,207 @@
                                 want to know more about Genfes,
                                 we'd love to hear from you.
                             </p>
-
                         </div>
-
 
                         <!-- Email -->
-
                         <div class="contact-item">
-
                             <div class="contact-icon">
-
                                 <i class="bi bi-envelope"></i>
-
                             </div>
 
                             <div>
-
-                                <span>
-                                    Email
-                                </span>
-
-                                <a href="mailto:althafabrarh.com">
-                                    hello@genfes.com
+                                <span>Email</span>
+                                <a href="mailto:genfes@gmail.com">
+                                    genfes@gmail.com
                                 </a>
-
                             </div>
-
                         </div>
 
-
-
                         <!-- Phone -->
-
                         <div class="contact-item">
-
                             <div class="contact-icon">
-
                                 <i class="bi bi-telephone"></i>
-
                             </div>
 
                             <div>
-
-                                <span>
-                                    Phone
-                                </span>
-
+                                <span>Phone</span>
                                 <a href="tel:+6281234567890">
                                     +62 812 3456 7890
                                 </a>
-
                             </div>
-
                         </div>
-
-
 
                         <!-- Location -->
-
                         <div class="contact-item">
-
                             <div class="contact-icon">
-
                                 <i class="bi bi-geo-alt"></i>
-
                             </div>
 
                             <div>
-
-                                <span>
-                                    Location
-                                </span>
-
-                                <p>
-                                    Indonesia
-                                </p>
-
+                                <span>Location</span>
+                                <a href="https://maps.app.goo.gl/ab35qtDfxD16PJ2U9" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Jl. Barata Jaya IV No.34, Baratajaya,
+                                    Kec. Gubeng, Surabaya, Jawa Timur 60284
+                                </a>
                             </div>
-
                         </div>
 
-
-
-                        <!-- Social -->
-
+                        <!-- Social Media -->
                         <div class="contact-social">
-
-                            <span>
-                                Follow Genfes
-                            </span>
+                            <span>Follow Genfes</span>
 
                             <div>
-
-                                <a href="#" aria-label="Instagram">
+                                <a href="https://www.instagram.com/genfes.id?psln=czl1MTFnMGoxdGQ2" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Instagram">
                                     <i class="bi bi-instagram"></i>
-                                </a>
-
-                                <a href="#" aria-label="LinkedIn">
-                                    <i class="bi bi-linkedin"></i>
                                 </a>
 
                                 <a href="#" aria-label="TikTok">
                                     <i class="bi bi-tiktok"></i>
                                 </a>
-
                             </div>
-
                         </div>
 
                     </div>
 
-
-
                     <!-- Contact Form -->
-
                     <div class="contact-form-wrapper">
 
                         <form id="contactForm">
 
-
                             <div class="form-row">
 
                                 <div class="form-group">
-
-                                    <label for="name">
-                                        Your Name
-                                    </label>
-
-                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name"
+                                        autocomplete="name" required>
                                 </div>
-
 
                                 <div class="form-group">
-
-                                    <label for="email">
-                                        Email Address
-                                    </label>
-
-                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                                        autocomplete="email" required>
                                 </div>
 
                             </div>
 
-
-
                             <div class="form-group">
-
-                                <label for="subject">
-                                    Subject
-                                </label>
-
+                                <label for="subject">Subject</label>
                                 <input type="text" id="subject" name="subject" placeholder="What can we help you with?"
                                     required>
-
                             </div>
-
-
 
                             <div class="form-group">
-
-                                <label for="message">
-                                    Message
-                                </label>
-
+                                <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="6" placeholder="Tell us about your event..."
                                     required></textarea>
-
                             </div>
 
-
-
                             <button type="submit" class="contact-submit">
-
                                 Send Message
-
                                 <i class="bi bi-arrow-right"></i>
-
                             </button>
-
 
                         </form>
 
                     </div>
 
-
                 </div>
+                <!-- End Contact Wrapper -->
 
             </div>
+            <!-- End Container -->
 
         </section>
+        <!-- END CONTACT SECTION -->
 
     </main>
 
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="container">
 
             <div class="footer-main">
 
-
                 <!-- Brand -->
-
                 <div class="footer-brand">
-
                     <a href="index.html" class="footer-logo">
-                        GEN<span>FES</span>
+                        <img src="assets/images/LOGO-sub.jpg" alt="Genfes">
                     </a>
 
                     <p>
-                        Creating innovative experiences and
-                        memorable events through creativity,
-                        professionalism, and passion.
+                        Grow Together,
+                        <br>
+                        Lead the Future.
                     </p>
 
-
                     <div class="footer-social">
-
-                        <a href="#" aria-label="Instagram">
+                        <a href="https://www.instagram.com/genfes.id?psln=czl1MTFnMGoxdGQ2" aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
-                        </a>
-
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
                         </a>
 
                         <a href="#" aria-label="TikTok">
                             <i class="bi bi-tiktok"></i>
                         </a>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Quick Links -->
-
                 <div class="footer-column">
+                    <h3>Quick Links</h3>
 
-                    <h3>
-                        Quick Links
-                    </h3>
-
-                    <a href="index.html#home">
-                        Home
-                    </a>
-
-                    <a href="index.html#about">
-                        What We Do
-                    </a>
-
-                    <a href="index.html#events">
-                        Our Services
-                    </a>
-
-                    <a href="contact.html">
-                        Contact
-                    </a>
-
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">What We Do</a>
+                    <a href="index.html#events">Our Services</a>
+                    <a href="contact.html">Contact</a>
                 </div>
-
-
 
                 <!-- Services -->
-
                 <div class="footer-column">
+                    <h3>Our Services</h3>
 
-                    <h3>
-                        Our Services
-                    </h3>
-
-                    <a href="index.html#events">
-                        Event Management
-                    </a>
-
-                    <a href="index.html#events">
-                        Music Festival
-                    </a>
-
-                    <a href="index.html#events">
-                        Seminar & Talkshow
-                    </a>
-
-                    <a href="index.html#events">
-                        Special Events
-                    </a>
-
+                    <a href="index.html#events">Event Management</a>
+                    <a href="index.html#events">Music Festival</a>
+                    <a href="index.html#events">Seminar &amp; Talkshow</a>
+                    <a href="index.html#events">Special Events</a>
                 </div>
 
-
-
                 <!-- Contact -->
-
                 <div class="footer-column footer-contact">
+                    <h3>Contact Us</h3>
 
-                    <h3>
-                        Contact Us
-                    </h3>
-
-                    <a href="mailto:hello@genfes.com">
-
+                    <a href="mailto:genfes@gmail.com">
                         <i class="bi bi-envelope"></i>
-
-                        hello@genfes.com
-
+                        genfes@gmail.com
                     </a>
 
-                    <a href="#">
-
+                    <a href="https://maps.app.goo.gl/ab35qtDfxD16PJ2U9">
                         <i class="bi bi-geo-alt"></i>
-
-                        Indonesia
-
+                        Jl. Barata Jaya IV No.34, Baratajaya, Kec. Gubeng, Surabaya, Jawa Timur 60284
                     </a>
 
                     <a href="tel:+6281234567890">
-
                         <i class="bi bi-telephone"></i>
-
                         +62 812 3456 7890
-
                     </a>
-
                 </div>
-
 
             </div>
 
-
             <div class="footer-bottom">
-
-                <p>
-                    © 2026 Genfes. All Rights Reserved.
-                </p>
+                <p>© 2026 Genfes. All Rights Reserved.</p>
 
                 <div class="footer-bottom-links">
-
-                    <a href="#">
-                        Privacy Policy
-                    </a>
-
-                    <a href="#">
-                        Terms & Conditions
-                    </a>
-
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
                 </div>
-
             </div>
 
         </div>
-
     </footer>
 
-
-
     <!-- JavaScript -->
-
     <script src="js/script.js"></script>
 
 </body>

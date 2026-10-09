@@ -153,17 +153,18 @@ document.addEventListener("DOMContentLoaded", () => {
        SCROLL REVEAL
     ======================================== */
 
-    const revealElements = document.querySelectorAll(
-        `
-        .section-heading,
-        .about-gallery,
-        .about-story,
-        .about-statistics,
-        .about-advantages,
-        .services-heading,
-        .contact-cta-content
-        `
-    );
+
+    const revealElements = document.querySelectorAll(`
+    .section-heading,
+    .about-gallery,
+    .about-story,
+    .about-statistics,
+    .about-advantages,
+    .stat-card,
+    .advantage-card,
+    .services-heading,
+    .contact-cta-content
+`);
 
 
     if ("IntersectionObserver" in window) {
@@ -482,89 +483,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-
-/* ========================================
-   STATISTICS NUMBER SCRAMBLE
-======================================== */
-
-const statNumbers = document.querySelectorAll(".stat-card strong");
-
-const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        const element = entry.target;
-
-        if (!entry.isIntersecting) {
-            element.dataset.animated = "false";
-            return;
-        }
-
-        if (element.dataset.animated === "true") return;
-
-        element.dataset.animated = "true";
-
-        const originalText =
-            element.dataset.originalText ||
-            element.textContent.trim();
-
-        element.dataset.originalText = originalText;
-
-        const digits = originalText.match(/\d/g);
-        if (!digits) return;
-
-        const duration = 3000;
-        const startTime = performance.now();
-
-        function scrambleNumber(currentTime) {
-            if (element.dataset.animated !== "true") return;
-
-            const progress = Math.min(
-                (currentTime - startTime) / duration,
-                1
-            );
-
-            const revealedDigits = Math.floor(
-                progress * digits.length
-            );
-
-            let digitIndex = 0;
-
-            const scrambledText = originalText.replace(/\d/g, () => {
-                const originalDigit = digits[digitIndex];
-                const currentIndex = digitIndex++;
-
-                if (
-                    progress === 1 ||
-                    currentIndex < revealedDigits
-                ) {
-                    return originalDigit;
-                }
-
-                return Math.floor(Math.random() * 10);
-            });
-
-            element.textContent = scrambledText;
-
-            if (progress < 1) {
-                requestAnimationFrame(scrambleNumber);
-            } else {
-                element.textContent = originalText;
-            }
-        }
-
-        requestAnimationFrame(scrambleNumber);
-    });
-}, {
-    threshold: 0.5
-});
-
-statNumbers.forEach((number) => {
-    number.dataset.originalText = number.textContent.trim();
-    statObserver.observe(number);
-});
-
-
-
 /* ========================================
    ABOUT STORY - TYPEWRITER
 ======================================== */
@@ -640,7 +558,7 @@ if (aboutStory) {
 
                 typingTimer = setTimeout(typeNextCharacter, 150);
             } else {
-                typingTimer = setTimeout(typeNextCharacter, 2);
+                typingTimer = setTimeout(typeNextCharacter, 0);
             }
         }
 
@@ -736,4 +654,160 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     backToNews.addEventListener("click", hideArticle);
+});
+
+
+/* ========================================
+   ADVANTAGES LETTER SCRAMBLE
+======================================== */
+
+const advantageTexts = document.querySelectorAll(
+    ".advantage-card h3, .advantage-card h4"
+);
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const advantageObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        const element = entry.target;
+
+        if (!entry.isIntersecting) return;
+        if (element.dataset.scrambling === "true") return;
+
+        element.dataset.scrambling = "true";
+
+        const originalText =
+            element.dataset.originalText ||
+            element.textContent.trim();
+
+        element.dataset.originalText = originalText;
+
+        let frame = 0;
+        const duration = 1000;
+        const totalFrames = 20;
+
+        function scrambleText() {
+            const progress = Math.min(frame / totalFrames, 1);
+            const revealedCount = Math.floor(
+                progress * originalText.length
+            );
+
+            element.textContent = [...originalText]
+                .map((char, index) => {
+                    if (char === " ") return " ";
+                    if (index < revealedCount) return char;
+
+                    return letters[
+                        Math.floor(Math.random() * letters.length)
+                    ];
+                })
+                .join("");
+
+            frame++;
+
+            if (frame <= totalFrames) {
+                setTimeout(scrambleText, duration / totalFrames);
+            } else {
+                element.textContent = originalText;
+                element.dataset.scrambling = "false";
+            }
+        }
+
+        scrambleText();
+    });
+}, {
+    threshold: 0.5
+});
+
+advantageTexts.forEach((element) => {
+    advantageObserver.observe(element);
+});
+
+/* ========================================
+   ADVANTAGES - LETTER SCRAMBLE ON SCROLL
+======================================== */
+
+const advantageCards = document.querySelectorAll(".advantage-card");
+const scrambleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const advantageScrambleObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            const card = entry.target;
+
+            // Saat kartu keluar dari layar, izinkan animasi diputar lagi
+            if (!entry.isIntersecting) {
+                card.dataset.scrambling = "false";
+                return;
+            }
+
+            // Jangan mulai ulang jika animasi masih berjalan
+            if (card.dataset.scrambling === "true") return;
+
+            card.dataset.scrambling = "true";
+
+            const textElements = card.querySelectorAll("h3, p");
+
+            textElements.forEach((element, elementIndex) => {
+                // Simpan teks asli agar tidak mengacak teks yang sudah berubah
+                if (!element.dataset.originalText) {
+                    element.dataset.originalText = element.textContent
+                        .replace(/\s+/g, " ")
+                        .trim();
+                }
+
+                const originalText = element.dataset.originalText;
+                const characters = [...originalText];
+                let frame = 0;
+                const totalFrames = 20;
+
+                function scramble() {
+                    const progress = Math.min(frame / totalFrames, 1);
+                    const revealed = Math.floor(
+                        progress * characters.length
+                    );
+
+                    element.textContent = characters
+                        .map((character, index) => {
+                            if (character === " ") return " ";
+                            if (index < revealed) return character;
+
+                            return scrambleCharacters[
+                                Math.floor(
+                                    Math.random() * scrambleCharacters.length
+                                )
+                            ];
+                        })
+                        .join("");
+
+                    frame++;
+
+                    if (frame <= totalFrames) {
+                        setTimeout(scramble, 40);
+                    } else {
+                        element.textContent = originalText;
+
+                        // Tandai kartu selesai jika semua teks sudah normal
+                        const allFinished = [...textElements].every(
+                            (item) =>
+                                item.textContent === item.dataset.originalText
+                        );
+
+                        if (allFinished) {
+                            card.dataset.scrambling = "false";
+                        }
+                    }
+                }
+
+                setTimeout(scramble, elementIndex * 100);
+            });
+        });
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+advantageCards.forEach((card) => {
+    advantageScrambleObserver.observe(card);
 });

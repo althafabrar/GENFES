@@ -4500,3 +4500,40 @@ body.modal-open {
         color: #333;
     }
 }
+
+/* FIX FINAL: ARTIKEL HARUS SELALU TERLIHAT */
+
+.article-detail:not([hidden]) .article-body {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.article-detail:not([hidden]) .article-body h1,
+.article-detail:not([hidden]) .article-body .article-meta,
+.article-detail:not([hidden]) .article-body p {
+    display: revert !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    color: #333;
+}
+
+/* Posisi foto kiri dan artikel kanan */
+.article-detail:not([hidden]) .article-detail-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: 40px;
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+    .article-detail:not([hidden]) .article-detail-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+}

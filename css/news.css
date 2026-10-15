@@ -1,0 +1,1032 @@
+/* ========================================
+   GENFES — NEWS PAGE CSS
+   Navy, Purple & Blue Theme
+======================================== */
+
+
+/* ========================================
+   1. NEWS HERO
+======================================== */
+
+.news-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 180px 0 100px;
+    color: var(--white);
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 1px 1px,
+            rgba(167, 139, 250, 0.10) 1px,
+            transparent 1px),
+        #11145c;
+
+    background-size: 18px 18px;
+}
+
+.news-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.news-hero-background video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.news-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+}
+
+.news-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.news-hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.news-hero h1 {
+    margin: 15px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+.news-hero h1 span {
+    color: #a78bfa;
+}
+
+.news-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #cbd5ff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   2. HERO REVEAL ANIMATION
+======================================== */
+
+.news-hero-content .section-label,
+.news-hero-content h1,
+.news-hero-content p {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(5px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s ease;
+}
+
+.news-hero-content .section-label {
+    transition-delay: 0.15s;
+}
+
+.news-hero-content h1 {
+    transition-delay: 0.35s;
+}
+
+.news-hero-content p {
+    transition-delay: 0.55s;
+}
+
+.news-hero-content.editorial-visible .section-label,
+.news-hero-content.editorial-visible h1,
+.news-hero-content.editorial-visible p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* ========================================
+   3. NEWS SECTION
+======================================== */
+
+.news-featured,
+.news-list {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 90px 0;
+
+    background:
+        radial-gradient(ellipse at 15% 0%,
+            rgba(91, 72, 190, 0.20),
+            transparent 45%),
+        radial-gradient(ellipse at 90% 100%,
+            rgba(54, 91, 190, 0.14),
+            transparent 45%),
+        #10113f;
+}
+
+.news-list {
+    padding-top: 20px;
+}
+
+
+/* ========================================
+   4. SECTION HEADING
+======================================== */
+
+.news-section-heading {
+    margin-bottom: 35px;
+}
+
+.news-section-heading .section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.news-section-heading h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.news-section-heading h2 span {
+    color: #a78bfa;
+}
+
+
+/* ========================================
+   5. FEATURED NEWS CARD
+======================================== */
+
+.featured-news-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    overflow: hidden;
+
+    border: 1px solid rgba(118, 86, 214, 0.10);
+    border-radius: 18px;
+    background: #ffffff;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.featured-news-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(155, 123, 255, 0.45);
+
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   6. NEWS IMAGE
+======================================== */
+
+.featured-news-image {
+    min-width: 0;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.featured-news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease;
+}
+
+.featured-news-card:hover .featured-news-image img {
+    transform: scale(1.055);
+    filter: saturate(1.08);
+}
+
+
+/* ========================================
+   7. NEWS CONTENT
+======================================== */
+
+.featured-news-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 45px;
+}
+
+.featured-news-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 45px;
+
+    width: 48px;
+    height: 3px;
+
+    border-radius: 10px;
+    background: var(--purple);
+
+    transition: width 0.45s ease;
+}
+
+.featured-news-card:hover .featured-news-content::before {
+    width: 90px;
+}
+
+.news-category {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+
+    border-radius: 50px;
+    background: #ede9fe;
+    color: var(--purple);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.featured-news-card:hover .news-category {
+    background: #e4ddff;
+    transform: translateY(-2px);
+}
+
+.news-date,
+.news-card-date {
+    color: #8b91a7;
+    font-size: 11px;
+}
+
+.featured-news-content h3 {
+    margin: 14px 0;
+    color: #17165c;
+    font-size: 28px;
+    line-height: 1.35;
+}
+
+.featured-news-content p {
+    margin-bottom: 22px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   8. READ MORE BUTTON
+======================================== */
+
+.news-read-more {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 9px;
+
+    width: fit-content;
+    padding: 10px 0;
+
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        gap 0.35s ease,
+        color 0.35s ease;
+}
+
+.news-read-more::after {
+    content: "→";
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
+
+.news-read-more:hover {
+    gap: 15px;
+    color: #5940b5;
+}
+
+.news-read-more:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   9. NEWS GRID
+   Untuk kartu berita tambahan jika digunakan
+======================================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.news-card {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #ffffff;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+}
+
+.news-card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.news-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.05);
+}
+
+.news-card-category {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+
+    padding: 6px 11px;
+    border-radius: 50px;
+
+    background: rgba(17, 20, 92, 0.90);
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.news-card-content {
+    padding: 24px;
+}
+
+.news-card-content h3 {
+    margin: 10px 0;
+    color: #17165c;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.news-card-content p {
+    margin-bottom: 18px;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   10. SCROLL REVEAL
+   Menggunakan class dari news.js:
+   .reveal-visible
+======================================== */
+
+.news-section-heading,
+.featured-news-card {
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.news-section-heading {
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featured-news-card {
+    transition:
+        opacity 0.8s ease,
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    transition-delay: 0.12s;
+}
+
+.news-section-heading.reveal-visible,
+.featured-news-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.featured-news-card.reveal-visible:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ========================================
+   11. ARTICLE DETAIL
+======================================== */
+
+.article-detail[hidden] {
+    display: none !important;
+}
+
+.article-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: articleFadeIn 0.45s ease;
+}
+
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+    padding: 12px 18px;
+
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+
+    font: inherit;
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.article-back:hover {
+    background: #9b7bff;
+    border-color: #9b7bff;
+    color: #ffffff;
+}
+
+
+
+/* ========================================
+   12. ARTICLE SLIDESHOW
+======================================== */
+
+.article-detail-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 48px;
+}
+
+.article-slideshow {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #171947;
+}
+
+.article-slideshow .article-slide {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.article-slideshow .article-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.article-slide-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding: 45px 24px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(transparent,
+            rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
+
+
+/* ========================================
+   13. ARTICLE BODY
+======================================== */
+
+.article-body {
+    min-width: 0;
+    margin: 0;
+}
+
+.article-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+/* Label kategori */
+.article-meta .news-category {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    padding: 6px 14px;
+
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 50px;
+    background: rgba(167, 139, 250, 0.12);
+
+    color: #c4b5fd;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+/* Tanggal artikel */
+.article-meta .news-date {
+    display: block;
+    margin: 0;
+
+    color: #aab6dc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.article-body h1 {
+    margin: 0 0 24px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.3;
+}
+
+.article-body p {
+    margin: 0 0 18px;
+    color: #cbd5f5;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.article-body .article-intro {
+    color: #e4e9ff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+/* ========================================
+   14. ARTICLE TEXT ANIMATION
+======================================== */
+
+.article-body h1,
+.article-body .article-meta,
+.article-body p {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.article-detail.text-animated .article-body h1,
+.article-detail.text-animated .article-body .article-meta,
+.article-detail.text-animated .article-body p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.article-detail.text-animated .article-body h1 {
+    transition-delay: 0.15s;
+}
+
+.article-detail.text-animated .article-body .article-intro {
+    transition-delay: 0.3s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(2) {
+    transition-delay: 0.45s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+
+.article-detail.text-animated .article-body p:nth-of-type(4) {
+    transition-delay: 0.75s;
+}
+
+@keyframes articleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   15. NEWS LIST / ARTICLE TRANSITION
+======================================== */
+
+#newsList,
+#articleDetail {
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+#newsList.is-leaving,
+#articleDetail.is-leaving {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+}
+
+
+/* ========================================
+   16. RESPONSIVE — TABLET
+======================================== */
+
+@media (max-width: 900px) {
+    .featured-news-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-news-image {
+        min-height: 300px;
+    }
+
+    .featured-news-content::before {
+        left: 28px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .article-detail-layout {
+        gap: 28px;
+    }
+
+    .article-slideshow {
+        height: 400px;
+    }
+}
+
+
+/* ========================================
+   17. RESPONSIVE — MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+    .news-hero-background video {
+        object-position: 60% center;
+    }
+
+    .article-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .article-slideshow {
+        height: 350px;
+    }
+
+    .article-body {
+        margin-top: 0;
+    }
+
+    .article-body h1 {
+        font-size: 30px;
+    }
+
+    .article-body p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-hero {
+        padding: 150px 20px 80px;
+    }
+
+    .news-hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .news-hero p {
+        font-size: 13px;
+    }
+
+    .news-featured,
+    .news-list {
+        padding: 65px 0;
+    }
+
+    .news-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .featured-news-card {
+        border-radius: 14px;
+    }
+
+    .featured-news-card.reveal-visible:hover {
+        transform: none;
+    }
+
+    .featured-news-content {
+        padding: 28px;
+    }
+
+    .featured-news-content::before {
+        left: 28px;
+    }
+
+    .featured-news-content h3 {
+        font-size: 23px;
+    }
+
+    .featured-news-image img {
+        transform: none;
+    }
+
+    .featured-news-card:hover .featured-news-image img {
+        transform: scale(1.02);
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card-image {
+        height: 210px;
+    }
+
+    .article-slideshow {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-slideshow {
+        height: 260px;
+    }
+
+    .article-body h1 {
+        font-size: 26px;
+    }
+}
+
+
+/* ========================================
+   18. REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .news-hero-content .section-label,
+    .news-hero-content h1,
+    .news-hero-content p,
+    .news-section-heading,
+    .featured-news-card,
+    .featured-news-image img,
+    .news-category,
+    .news-read-more,
+    .news-card,
+    .news-card-image img,
+    #newsList,
+    #articleDetail,
+    .article-body h1,
+    .article-body .article-meta,
+    .article-body p {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+        animation: none;
+    }
+}
+
+/* ========================================
+   GENFES NEWS — FINAL COLOR CORRECTION
+   Menyatu dengan tema background Home
+======================================== */
+
+/* Background utama berita */
+.news-featured,
+.news-list {
+    background:
+        radial-gradient(circle at 15% 15%,
+            rgba(95, 78, 210, 0.16),
+            transparent 38%),
+        radial-gradient(circle at 85% 80%,
+            rgba(57, 110, 230, 0.12),
+            transparent 40%),
+        linear-gradient(180deg,
+            #11145c 0%,
+            #10113f 100%) !important;
+
+    color: #f5f7ff;
+}
+
+/* Heading berita */
+.news-section-heading .section-label {
+    color: #9b7bff;
+}
+
+.news-section-heading h2 {
+    color: #ffffff !important;
+}
+
+.news-section-heading h2 span {
+    color: #a78bfa !important;
+}
+
+/* Kartu berita utama */
+.featured-news-card {
+    background: #191b52 !important;
+    border: 1px solid rgba(157, 139, 255, 0.22);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.featured-news-card:hover {
+    border-color: rgba(157, 139, 255, 0.5);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul dan deskripsi berita utama */
+.featured-news-content h3 {
+    color: #ffffff !important;
+}
+
+.featured-news-content p {
+    color: #cbd5f5 !important;
+}
+
+/* Label kategori */
+.news-category {
+    background: rgba(167, 139, 250, 0.16) !important;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    color: #c4b5fd !important;
+}
+
+/* Tanggal berita */
+.news-date,
+.news-card-date {
+    color: #aab6dc !important;
+}
+
+/* Kartu berita lainnya */
+.news-card {
+    background: #191b52 !important;
+    border: 1px solid rgba(157, 139, 255, 0.18);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.news-card:hover {
+    border-color: rgba(157, 139, 255, 0.45);
+}
+
+.news-card-content h3 {
+    color: #ffffff !important;
+}
+
+.news-card-content p {
+    color: #cbd5f5 !important;
+}
+
+.news-card-category {
+    background: rgba(17, 20, 92, 0.95) !important;
+    color: #d9d0ff !important;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+/* Tombol baca artikel */
+.news-read-more {
+    color: #b9a5ff !important;
+}
+
+.news-read-more:hover {
+    color: #dcd2ff !important;
+}
+
+/* Detail artikel */
+.article-detail {
+    color: #f5f7ff;
+}
+
+.article-body h1 {
+    color: #ffffff !important;
+}
+
+.article-body p {
+    color: #cbd5f5 !important;
+}
+
+.article-body .article-intro {
+    color: #e4e9ff !important;
+}
+
+.article-meta {
+    color: #b8c4ed;
+}
+
+/* Tombol kembali */
+.article-back {
+    color: #e5e7ff !important;
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.3);
+}
+
+.article-back:hover {
+    color: #ffffff !important;
+    background: #7560d8;
+}
+
+/* Area slideshow */
+.article-slideshow {
+    background: #171947;
+    border: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .news-section-heading h2 {
+        color: #ffffff !important;
+    }
+
+    .featured-news-content h3,
+    .news-card-content h3 {
+        color: #ffffff !important;
+    }
+}

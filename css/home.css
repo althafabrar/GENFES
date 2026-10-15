@@ -1,0 +1,1617 @@
+/* GENFES — HOME PAGE CSS */
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: var(--white);
+}
+
+
+/* ========================================
+   HERO BACKGROUND
+======================================== */
+.hero-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+/* ========================================
+   HERO VIDEO - MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .hero-background {
+        overflow: hidden;
+    }
+
+    .hero-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        object-position: 85% center;
+    }
+}
+
+
+/* ========================================
+   HERO OVERLAY
+======================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(17, 20, 39, 0.96) 0%,
+            rgba(32, 27, 72, 0.88) 38%,
+            rgba(67, 48, 125, 0.68) 70%,
+            rgba(92, 70, 150, 0.42) 100%);
+
+    z-index: -2;
+}
+
+
+
+
+/* ========================================
+   HERO CONTAINER
+======================================== */
+
+.hero-container {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 80px;
+}
+
+
+
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+    width: 60%;
+
+    max-width: 760px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.hero-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    color: #c4b5fd;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.hero-label span {
+    width: 35px;
+    height: 2px;
+
+    background: var(--violet);
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px,
+            6vw,
+            88px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 strong {
+    display: block;
+
+    background:
+        linear-gradient(90deg,
+            #ffffff,
+            #c4b5fd);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero-description {
+    max-width: 570px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 38px;
+}
+
+
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 50px;
+
+    border: 1px solid transparent;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all var(--transition);
+}
+
+
+.btn-primary {
+    background:
+        linear-gradient(135deg,
+            var(--purple),
+            var(--violet));
+
+    color: var(--white);
+
+    box-shadow:
+        0 10px 30px rgba(124, 58, 237, 0.35);
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(124, 58, 237, 0.5);
+}
+
+
+.btn-primary i {
+    font-size: 18px;
+}
+
+
+.btn-outline {
+    border-color: rgba(255, 255, 255, 0.3);
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(5px);
+}
+
+
+.btn-outline:hover {
+    background: var(--white);
+
+    color: var(--deep-blue);
+
+    transform: translateY(-3px);
+}
+
+
+
+
+/* ========================================
+   HERO DECORATION
+======================================== */
+
+.hero-decoration {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 400px;
+    height: 400px;
+
+    pointer-events: none;
+
+    transform: translateY(-50%);
+}
+
+
+.decoration-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(196, 181, 253, 0.25);
+}
+
+
+.circle-one {
+    width: 320px;
+    height: 320px;
+
+    top: 20px;
+    right: 10px;
+}
+
+
+.circle-two {
+    width: 230px;
+    height: 230px;
+
+    top: 65px;
+    right: 55px;
+
+    background:
+        radial-gradient(circle,
+            rgba(139, 92, 246, 0.18),
+            transparent 70%);
+}
+
+
+
+/* ========================================
+   HERO CARD / GENFES DECORATION
+======================================== */
+.hero-card {
+    position: absolute;
+
+    right: 10px;
+    bottom: 60px;
+
+    width: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+/* Gambar Kalimat Genfes */
+
+.hero-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+/* ========================================
+   PLACEHOLDER SECTION
+======================================== */
+
+.placeholder-section {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 0;
+
+    background: var(--white);
+}
+
+
+.dark-section {
+    background: var(--deep-blue);
+
+    color: var(--white);
+}
+
+
+.section-label {
+    margin-bottom: 15px;
+
+    color: var(--purple);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.placeholder-section h2 {
+    max-width: 800px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px,
+            5vw,
+            70px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.placeholder-section h2 span {
+    color: var(--violet);
+}
+
+
+
+
+/* ========================================
+   VIDEO MODAL
+======================================== */
+
+.video-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
+
+    z-index: 2000;
+}
+
+
+.video-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.video-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(5, 7, 20, 0.88);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.video-modal-content {
+    position: relative;
+
+    width: min(1000px,
+            100%);
+
+    z-index: 2;
+
+    transform: scale(0.95);
+
+    transition:
+        transform var(--transition);
+}
+
+
+.video-modal.active .video-modal-content {
+    transform: scale(1);
+}
+
+
+.video-wrapper {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #000;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+.video-wrapper video {
+    width: 100%;
+
+    max-height: 75vh;
+}
+
+
+.video-close {
+    position: absolute;
+
+    top: -50px;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    background: rgba(17, 24, 39, 0.8);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+    transition: all var(--transition);
+
+    z-index: 3;
+}
+
+
+.video-close:hover {
+    background: var(--purple);
+
+    transform: rotate(90deg);
+}
+
+
+
+
+/* ========================================
+   ABOUT STORY - TYPEWRITER
+======================================== */
+
+
+/* Teks terlihat secara default */
+.about-story .story-label,
+.about-story h2,
+.about-story p {
+    opacity: 1;
+}
+
+@keyframes typingCursor {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Menghormati pengaturan pengurangan animasi */
+@media (prefers-reduced-motion: reduce) {
+    .about-story .typing-active::after {
+        animation: none;
+    }
+}
+
+
+
+/* =========================
+   ABOUT GENFES
+========================== */
+
+.about-section {
+    position: relative;
+    padding: 90px 0;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.12) 1px, transparent 1px),
+        #11145c;
+
+    background-size: 12px 12px;
+    color: #ffffff;
+}
+
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.heading-line {
+    width: 35px;
+    height: 2px;
+    background: #8b5cf6;
+    margin: 8px auto 0;
+}
+
+
+/* About Main */
+
+.about-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+    align-items: stretch;
+}
+
+
+/* Gallery */
+
+
+
+/* ========================================
+   ABOUT GALLERY
+======================================== */
+
+.about-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: 325px 195px;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+
+
+/* =========================
+   ABOUT RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .about-main {
+        grid-template-columns: 1fr;
+    }
+
+    .about-story {
+        padding: 22px;
+    }
+
+    .about-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-advantages {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+    .section-heading span {
+        font-size: 12px;
+    }
+
+
+    .about-gallery {
+        grid-template-rows: 190px 110px;
+        gap: 8px;
+    }
+
+
+    .about-story {
+        padding: 18px;
+    }
+
+    .about-story h2 {
+        font-size: 20px;
+    }
+
+    .about-story p {
+        font-size: 11px;
+    }
+
+
+    .about-statistics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 15px 8px;
+    }
+
+    .stat-card strong {
+        font-size: 17px;
+    }
+
+
+    .about-advantages {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .advantage-card {
+        padding: 17px;
+    }
+
+}
+
+
+
+
+/* ========================================
+   SERVICES - LEFT TO RIGHT ANIMATION
+======================================== */
+
+.services-section .service-card {
+    opacity: 0;
+    transform: translateX(-40px);
+
+    transition:
+        opacity 2s ease,
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--service-delay, 0ms);
+}
+
+.services-section .service-card.service-card-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pertahankan efek hover setelah kartu masuk */
+.services-section .service-card.service-card-visible:hover {
+    transform: translateY(-6px);
+}
+
+
+
+
+
+/* =========================
+   OUR SERVICES
+========================== */
+
+.services-section {
+    position: relative;
+    padding: 90px 0;
+
+    background:
+        radial-gradient(circle at 1px 1px,
+            rgba(167, 139, 250, 0.12) 1px,
+            transparent 1px),
+        linear-gradient(135deg,
+            #17165c,
+            #24166f,
+            #312e81);
+
+    background-size: 12px 12px, 100% 100%;
+
+    color: #ffffff;
+}
+
+
+
+
+/* =========================
+   HEADING
+========================== */
+
+.services-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.services-heading h2 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.services-heading h2 span {
+    color: #a78bfa;
+}
+
+.services-heading p {
+    margin: 0;
+
+    color: #cbd5ff;
+
+    font-size: 12px;
+}
+
+
+
+
+/* =========================
+   SERVICES GRID
+========================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .services-section {
+        padding: 70px 0;
+    }
+
+    .services-heading h2 {
+        font-size: 24px;
+    }
+
+    .services-heading p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+}
+
+
+
+/* =========================
+   CONTACT CTA
+========================== */
+
+.contact-cta {
+    padding: 90px 0;
+
+    background:
+        radial-gradient(circle at 1px 1px,
+            rgba(167, 139, 250, 0.10) 1px,
+            transparent 1px),
+        linear-gradient(135deg,
+            #18194f 0%,
+            #211b5d 45%,
+            #29216d 75%,
+            #312e81 100%);
+
+    background-size: 12px 12px, 100% 100%;
+
+    color: #ffffff;
+}
+
+
+.contact-cta-content {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.contact-cta-content .section-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #a78bfa;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.contact-cta-content h2 {
+    margin: 0 0 15px;
+
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+
+.contact-cta-content h2 span {
+    color: #a78bfa;
+}
+
+
+.contact-cta-content p {
+    max-width: 550px;
+
+    margin: 0 auto 25px;
+
+    color: #cbd5ff;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+.contact-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #312e81;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.contact-cta-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-cta {
+        padding: 70px 0;
+    }
+
+    .contact-cta-content h2 {
+        font-size: 28px;
+    }
+
+    .contact-cta-content p {
+        font-size: 11px;
+    }
+
+}
+
+
+
+
+/* ========================================
+   GENFES ANIMATION
+======================================== */
+
+/* ----------------------------------------
+   SCROLL REVEAL
+---------------------------------------- */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--animation-delay, 0s);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* ========================================
+   ABOUT ANIMATION
+======================================== */
+
+.about-gallery.reveal-element {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.about-gallery.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-story.reveal-element {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.about-story.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-gallery,
+.about-story {
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Statistics */
+
+
+/* Statistics - bergerak dari kiri ke kanan */
+.stat-card.reveal-element {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.stat-card.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.stat-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+    transition-delay: var(--animation-delay, 0s);
+}
+
+/* Advantages */
+
+.advantage-card.reveal-element {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.advantage-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advantage-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+}
+
+/* Image hover */
+
+.about-image img {
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ----------------------------------------
+   STATISTICS
+---------------------------------------- */
+
+.stat-card.reveal-element {
+    transform: translateY(25px) scale(0.97);
+}
+
+.stat-card.reveal-visible {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ----------------------------------------
+   ADVANTAGES
+---------------------------------------- */
+
+.advantage-card.reveal-element {
+    transform: translateY(25px);
+}
+
+.advantage-card.reveal-visible {
+    transform: translateY(0);
+}
+
+
+
+
+/* ========================================
+   SERVICES ANIMATION
+======================================== */
+
+.service-card.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* ----------------------------------------
+   ADVANTAGE HOVER
+---------------------------------------- */
+
+.advantage-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ----------------------------------------
+   STAT HOVER
+---------------------------------------- */
+
+.stat-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ----------------------------------------
+   ABOUT IMAGE
+---------------------------------------- */
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-image img {
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ----------------------------------------
+   HERO CONTENT
+---------------------------------------- */
+
+.hero-content {
+    animation:
+        heroContentIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ----------------------------------------
+   HERO DECORATION
+---------------------------------------- */
+
+.circle-one {
+    animation:
+        softFloatOne 6s ease-in-out infinite;
+}
+
+.circle-two {
+    animation:
+        softFloatTwo 8s ease-in-out infinite;
+}
+
+.hero-card {
+    animation:
+        softFloatCard 5s ease-in-out infinite;
+}
+
+
+/* ----------------------------------------
+   CIRCLE ONE
+---------------------------------------- */
+
+@keyframes softFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   CIRCLE TWO
+---------------------------------------- */
+
+@keyframes softFloatTwo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   GENFES LOGO
+---------------------------------------- */
+
+@keyframes softFloatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+}
+
+
+/* ----------------------------------------
+   BUTTON
+---------------------------------------- */
+
+.btn,
+.contact-cta-button,
+.event-read-more {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover,
+.contact-cta-button:hover,
+.event-read-more:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ----------------------------------------
+   SCROLL INDICATOR
+---------------------------------------- */
+
+.scroll-indicator i {
+    animation:
+        scrollArrow 2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+
+}
+
+
+/* ----------------------------------------
+   NAVBAR
+---------------------------------------- */
+
+.navbar {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        backdrop-filter 0.35s ease;
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(17, 24, 39, 0.12);
+}
+
+
+/* ----------------------------------------
+   VIDEO MODAL
+---------------------------------------- */
+
+.video-modal {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.video-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-modal-content {
+    transform:
+        scale(0.96) translateY(15px);
+
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.video-modal.active .video-modal-content {
+    transform:
+        scale(1) translateY(0);
+}
+
+
+/* ----------------------------------------
+   BODY MODAL
+---------------------------------------- */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
+
+/* =========================
+   HERO BACKGROUND VIDEO
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Lapisan gelap agar teks tetap terbaca */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.48);
+}
+
+/* Pastikan konten tetap di atas background */
+.hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .article-detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .article-body {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    .article-body h1,
+    .article-body .article-meta,
+    .article-body p {
+        display: block;
+        visibility: visible;
+        color: #333;
+    }
+}
+
+/* FIX FINAL: ARTIKEL HARUS SELALU TERLIHAT */
+
+.article-detail:not([hidden]) .article-body {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.article-detail:not([hidden]) .article-body h1,
+.article-detail:not([hidden]) .article-body .article-meta,
+.article-detail:not([hidden]) .article-body p {
+    display: revert !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    color: #333;
+}
+
+/* Posisi foto kiri dan artikel kanan */
+.article-detail:not([hidden]) .article-detail-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: 40px;
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+    .article-detail:not([hidden]) .article-detail-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+}
+
+
+/* STATISTICS: kartu masuk dari kiri */
+.stat-card.reveal-element {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.stat-card.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ADVANTAGES: kartu masuk dari kiri */
+.advantage-card.reveal-element {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.advantage-card.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Transisi dan urutan animasi */
+.stat-card,
+.advantage-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+    transition-delay: var(--animation-delay, 0s);
+}
+
+
+/* Statistics - One Way Slide to the Left */
+
+.stat-card.reveal-element {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.stat-card.reveal-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.stat-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--animation-delay, 0s);
+}
+
+
+
+
+/* ========================================
+   STATISTICS - INFINITE LEFT MARQUEE
+======================================== */
+
+.about-statistics {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-statistics .stats-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    animation: statisticsMarquee 20s linear infinite;
+    will-change: transform;
+}
+
+.about-statistics .stat-card {
+    flex: 0 0 220px;
+}
+
+/* Gerakan berulang ke kiri */
+@keyframes statisticsMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Berhenti sementara saat diarahkan mouse */
+.about-statistics:hover .stats-track {
+    animation-play-state: paused;
+}

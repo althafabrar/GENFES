@@ -1,0 +1,987 @@
+/* ========================================
+   GENFES — EVENTS PAGE CSS
+   Navy, Purple & Blue Theme
+======================================== */
+
+
+/* ========================================
+   1. EVENTS HERO
+======================================== */
+
+.events-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 180px 0 100px;
+    background: #11145c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.events-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.events-hero-background video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.events-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+}
+
+.events-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.events-hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.events-hero h1 {
+    margin: 15px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.events-hero h1 span {
+    color: #a78bfa;
+}
+
+.events-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #e0e7ff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   2. HERO TEXT ANIMATION
+======================================== */
+
+.events-hero-content .section-label,
+.events-hero-content h1,
+.events-hero-content p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+}
+
+.events-hero-content .section-label {
+    transition-delay: 0.15s;
+}
+
+.events-hero-content h1 {
+    transition-delay: 0.35s;
+}
+
+.events-hero-content p {
+    transition-delay: 0.55s;
+}
+
+.events-hero-content.editorial-visible .section-label,
+.events-hero-content.editorial-visible h1,
+.events-hero-content.editorial-visible p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* ========================================
+   3. VIDEO BACKGROUND — PROGRAMS
+======================================== */
+
+.programs-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 90px 0;
+    background: #11145c;
+    color: #f5f7ff;
+}
+
+.programs-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.programs-background video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.programs-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(12, 14, 65, 0.78);
+    pointer-events: none;
+}
+
+.programs-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ========================================
+   4. GENERAL EVENT SECTIONS
+======================================== */
+
+.featured-event,
+.upcoming-events {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 90px 0;
+    background:
+        radial-gradient(ellipse at 15% 0%,
+            rgba(91, 72, 190, 0.20),
+            transparent 45%),
+        radial-gradient(ellipse at 90% 100%,
+            rgba(54, 91, 190, 0.14),
+            transparent 45%),
+        linear-gradient(180deg, #11145c 0%, #10113f 100%);
+    color: #f5f7ff;
+}
+
+.upcoming-events {
+    padding-top: 30px;
+}
+
+
+/* ========================================
+   5. SECTION HEADING
+======================================== */
+
+.event-section-heading {
+    margin-bottom: 35px;
+}
+
+.event-section-heading .section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.event-section-heading h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.event-section-heading h2 span {
+    color: #a78bfa;
+}
+
+.event-section-heading p {
+    max-width: 600px;
+    margin-bottom: 0;
+    color: #cbd5f5;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   6. FEATURED EVENT CARD
+======================================== */
+
+.featured-event-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    overflow: hidden;
+    border: 1px solid rgba(157, 139, 255, 0.22);
+    border-radius: 20px;
+    background: #191b52;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.featured-event-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(157, 139, 255, 0.5);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.30);
+}
+
+.featured-event-image {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: #171947;
+}
+
+.featured-event-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-event-card:hover .featured-event-image img {
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   7. EVENT STATUS & CONTENT
+======================================== */
+
+.event-status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 7px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    background: #7560d8;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.featured-event-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 50px;
+}
+
+.event-category {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 10px;
+    color: #b9a5ff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featured-event-content h3 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.featured-event-content>p {
+    margin-bottom: 25px;
+    color: #cbd5f5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   8. EVENT META
+======================================== */
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.event-meta div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cbd5f5;
+    font-size: 12px;
+}
+
+.event-meta i {
+    color: #a78bfa;
+    font-size: 15px;
+}
+
+
+/* ========================================
+   9. EVENT BUTTON
+======================================== */
+
+.event-button,
+.event-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    color: #b9a5ff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.event-button:hover,
+.event-read-more:hover {
+    gap: 13px;
+    color: #e0d7ff;
+}
+
+
+/* ========================================
+   10. UPCOMING EVENTS GRID
+======================================== */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.event-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(157, 139, 255, 0.18);
+    border-radius: 18px;
+    background: #191b52;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.20);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(157, 139, 255, 0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ========================================
+   11. EVENT CARD IMAGE
+======================================== */
+
+.event-card-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #24265f, #171947);
+    border-radius: 16px 16px 0 0;
+}
+
+.event-card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-card-image img {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   12. EVENT DATE
+======================================== */
+
+.event-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 60px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 10px;
+    background: rgba(17, 20, 92, 0.95);
+    color: #ffffff;
+}
+
+.event-date strong {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.event-date span {
+    margin-top: 3px;
+    color: #cbd5ff;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   13. EVENT CARD CONTENT
+======================================== */
+
+.event-card-content {
+    padding: 24px;
+}
+
+.event-card-content h3 {
+    margin: 5px 0 10px;
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.event-card-content p {
+    margin-bottom: 15px;
+    color: #cbd5f5;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.event-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 18px;
+    color: #aab6dc;
+    font-size: 11px;
+}
+
+.event-location i {
+    color: #a78bfa;
+}
+
+
+/* ========================================
+   14. PROGRAMS GRID
+======================================== */
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.program-card {
+    min-width: 0;
+    padding: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(167, 139, 250, 0.22);
+    border-radius: 18px;
+    background: linear-gradient(145deg,
+            rgba(58, 53, 135, 0.82),
+            rgba(25, 27, 82, 0.92));
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg,
+            rgba(67, 61, 151, 0.9),
+            rgba(35, 33, 105, 0.96));
+    border-color: rgba(167, 139, 250, 0.45);
+}
+
+
+/* ========================================
+   15. PROGRAM ICON
+======================================== */
+
+.program-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7560d8, #5144a8);
+    color: #ffffff;
+    font-size: 21px;
+    box-shadow: 0 8px 20px rgba(118, 86, 214, 0.25);
+}
+
+
+/* ========================================
+   16. PROGRAM TEXT & LINKS
+======================================== */
+
+.program-card h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.program-card p {
+    margin-bottom: 20px;
+    color: #cbd5f5;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.program-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #b9a5ff;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.program-card a:hover {
+    gap: 11px;
+    color: #e0d7ff;
+}
+
+
+/* ========================================
+   17. RESPONSIVE — TABLET
+======================================== */
+
+@media (max-width: 900px) {
+    .featured-event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-event-image {
+        min-height: 300px;
+    }
+
+    .event-grid,
+    .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured-event-content {
+        padding: 36px;
+    }
+}
+
+
+/* ========================================
+   18. RESPONSIVE — MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .events-hero-background video,
+    .programs-background video {
+        object-position: 60% center;
+    }
+}
+
+@media (max-width: 600px) {
+    .events-hero {
+        padding: 150px 20px 80px;
+    }
+
+    .events-hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .events-hero p {
+        font-size: 13px;
+    }
+
+    .featured-event,
+    .upcoming-events,
+    .programs-section {
+        padding: 65px 0;
+    }
+
+    .upcoming-events {
+        padding-top: 25px;
+    }
+
+    .event-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .featured-event-content {
+        padding: 28px;
+    }
+
+    .featured-event-content h3 {
+        font-size: 23px;
+    }
+
+    .event-grid,
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        padding: 27px;
+    }
+}
+
+
+/* ========================================
+   19. REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .events-hero-content .section-label,
+    .events-hero-content h1,
+    .events-hero-content p,
+    .featured-event-card,
+    .featured-event-image img,
+    .event-card,
+    .event-card-image img,
+    .program-card,
+    .program-card a,
+    .event-button,
+    .event-read-more {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* =====================================================
+   BACKGROUND ONLY — MATCH NEWS & ARTICLE
+   Tidak mengubah layout, teks, kartu, tombol, atau animasi.
+===================================================== */
+
+/* Hero: video dengan gradasi navy–purple seperti News */
+.events-hero {
+    background:
+        radial-gradient(ellipse at 50% 22%,
+            rgba(72, 82, 195, 0.22) 0%,
+            transparent 58%),
+        linear-gradient(180deg,
+            #171b68 0%,
+            #17185f 58%,
+            #141650 82%,
+            #111344 100%);
+}
+
+.events-hero-background video {
+    filter: saturate(0.9) brightness(0.45);
+}
+
+.events-hero-overlay {
+    background: linear-gradient(180deg,
+            rgba(17, 20, 92, 0.34) 0%,
+            rgba(17, 19, 68, 0.46) 58%,
+            rgba(17, 19, 68, 0.76) 100%);
+}
+
+/* Section event: grid halus dan kelanjutan gradasi dari hero */
+.upcoming-events,
+.featured-event {
+    background-color: #111344;
+    background-image:
+        linear-gradient(rgba(115, 225, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(115, 225, 255, 0.055) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 0%,
+            rgba(91, 72, 190, 0.16), transparent 68%),
+        linear-gradient(180deg,
+            #111344 0%,
+            #10123f 54%,
+            #0e1038 100%);
+    background-size: 110px 110px, 110px 110px, auto, auto;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+/* Programs: tetap satu palet, tanpa mengubah card atau layout */
+.programs-section {
+    background-color: #0e1038;
+    background-image:
+        linear-gradient(rgba(115, 225, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(115, 225, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(180deg, #0e1038 0%, #0c0e34 100%);
+    background-size: 110px 110px, 110px 110px, auto;
+    background-repeat: repeat, repeat, no-repeat;
+}
+
+/* Overlay program dibuat transparan agar background grid tetap terlihat */
+.programs-overlay {
+    background: transparent;
+}
+
+/* =====================================================
+   PROGRAM YANG BERDAMPAK — SOFT INTERACTIVE EFFECTS
+   Hanya CSS: tidak mengubah HTML, JS, atau posisi ikon.
+===================================================== */
+.programs-section .program-card {
+    position: relative;
+    isolation: isolate;
+    transition: transform .45s cubic-bezier(.22, 1, .36, 1),
+        border-color .35s ease,
+        box-shadow .45s ease,
+        background .35s ease;
+}
+
+.programs-section .program-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 5%, rgba(167, 139, 250, .16), transparent 65%);
+    opacity: 0;
+    transition: opacity .45s ease;
+    pointer-events: none;
+}
+
+.programs-section .program-icon {
+    position: relative;
+    transform: translateY(0) rotate(0);
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .45s ease,
+        background .45s ease;
+}
+
+.programs-section .program-icon i {
+    display: inline-block;
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .programs-section .program-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(167, 139, 250, .6);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, .25), 0 0 26px rgba(118, 86, 214, .10);
+    }
+
+    .programs-section .program-card:hover::before {
+        opacity: 1;
+    }
+
+    .programs-section .program-card:hover .program-icon {
+        transform: translateY(-5px) rotate(-4deg);
+        background: linear-gradient(135deg, #9277e8, #7656d6);
+        box-shadow: 0 14px 28px rgba(118, 86, 214, .42), 0 0 20px rgba(167, 139, 250, .20);
+    }
+
+    .programs-section .program-card:hover .program-icon i {
+        transform: scale(1.12) rotate(4deg);
+    }
+}
+
+.programs-section .program-card:focus-within {
+    border-color: rgba(167, 139, 250, .65);
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, .25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .programs-section .program-card,
+    .programs-section .program-card::before,
+    .programs-section .program-icon,
+    .programs-section .program-icon i {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* =====================================================
+   PROGRAM YANG BERDAMPAK — MOBILE REFINEMENT
+   Mengubah presentasi kartu hanya pada HP.
+===================================================== */
+@media (max-width: 600px) {
+    .programs-section {
+        padding: 68px 0 76px;
+    }
+
+    .programs-section .event-section-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .programs-section .event-section-heading h2 {
+        font-size: clamp(27px, 7vw, 32px);
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .programs-section .event-section-heading p {
+        max-width: 340px;
+        margin-inline: auto;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .programs-section .program-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .programs-section .program-card {
+        padding: 29px 24px 27px;
+        border-radius: 20px;
+        text-align: center;
+        background: linear-gradient(150deg, rgba(47, 43, 121, .94), rgba(23, 26, 78, .96));
+        box-shadow: 0 14px 35px rgba(0, 0, 0, .15);
+    }
+
+    .programs-section .program-icon {
+        width: 58px;
+        height: 58px;
+        margin: 0 auto 18px;
+        border-radius: 17px;
+        font-size: 25px;
+    }
+
+    .programs-section .program-card h3 {
+        font-size: 21px;
+        line-height: 1.35;
+        margin-bottom: 11px;
+    }
+
+    .programs-section .program-card p {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 13px;
+        line-height: 1.8;
+        color: #d8def7;
+    }
+}
+
+@media (max-width: 380px) {
+    .programs-section .program-card {
+        padding: 25px 18px;
+    }
+
+    .programs-section .program-card h3 {
+        font-size: 19px;
+    }
+
+    .programs-section .program-grid {
+        gap: 14px;
+    }
+}
+
+/* Pada perangkat sentuh, kartu tidak perlu 'terangkat' saat tap. */
+@media (hover: none) and (pointer: coarse) {
+    .programs-section .program-card:active {
+        border-color: rgba(167, 139, 250, .45);
+    }
+}
+
+/* =====================================================
+   MOBILE: HORIZONTAL SWIPE FOR PROGRAM CARDS
+   Overrides single-column stacking without changing desktop.
+===================================================== */
+@media (max-width: 600px) {
+    .programs-section .program-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 4px;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        padding: 6px 4px 20px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(167, 139, 250, .5) transparent;
+    }
+
+    .programs-section .program-card {
+        flex: 0 0 min(78vw, 300px);
+        min-width: 0;
+        scroll-snap-align: start;
+        padding: 27px 20px 25px;
+    }
+
+    .programs-section .program-card h3 {
+        font-size: 19px;
+    }
+
+    .programs-section .program-card p {
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   MOBILE: KARTU EVENT LEBIH RINGKAS, POSTER TETAP UTUH
+   Tidak memengaruhi program slider ataupun desktop.
+===================================================== */
+@media (max-width: 600px) {
+    .upcoming-events .event-grid {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 22px;
+    }
+
+    .upcoming-events .event-card {
+        width: 100%;
+        max-width: 300px;
+        margin-inline: auto;
+    }
+
+    .upcoming-events .event-card-image {
+        height: auto;
+        min-height: 0;
+        padding: 10px;
+    }
+
+    .upcoming-events .event-card-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        aspect-ratio: auto;
+        object-fit: contain;
+        transform: none;
+    }
+
+    .upcoming-events .event-card-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .upcoming-events .event-card {
+        max-width: 280px;
+    }
+}

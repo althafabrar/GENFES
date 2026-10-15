@@ -454,3 +454,344 @@
         object-position: 82% center;
     }
 }
+
+
+/* ==========================================================
+   GENFES CONTACT — GLASSMORPHISM / BLUE & PURPLE GLOW
+   Only visual overrides. Keep HTML, form logic and video.
+   ========================================================== */
+
+.contact-section {
+    background:
+        radial-gradient(ellipse at 15% 28%, rgba(49, 98, 233, .16), transparent 48%),
+        radial-gradient(ellipse at 85% 75%, rgba(116, 86, 214, .17), transparent 46%),
+        linear-gradient(180deg, #111344 0%, #10123f 55%, #0e1038 100%);
+}
+
+/* Dark-blue veil over the existing video, matching News. */
+.contact-section.contact-page .contact-overlay {
+    background: linear-gradient(180deg,
+            rgba(10, 14, 48, .55) 0%,
+            rgba(13, 17, 62, .68) 48%,
+            rgba(14, 16, 56, .88) 100%);
+}
+
+.contact-section.contact-page .contact-background video {
+    filter: saturate(.88) brightness(.72);
+}
+
+.contact-heading {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-heading>span {
+    color: #a9b9ff;
+    letter-spacing: 2.6px;
+}
+
+.contact-heading h2 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: -.6px;
+    text-shadow: 0 4px 28px rgba(18, 44, 120, .18);
+}
+
+.contact-heading h2 strong {
+    color: #b9a7ff;
+}
+
+/* The glow stays behind the cards, not above the form. */
+.contact-wrapper {
+    position: relative;
+    isolation: isolate;
+    gap: 28px;
+}
+
+.contact-wrapper::before,
+.contact-wrapper::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(45vw, 490px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(65px);
+    opacity: .70;
+    animation: contactGlowDrift 10s ease-in-out infinite alternate;
+}
+
+.contact-wrapper::before {
+    left: -12%;
+    top: -20%;
+    background: radial-gradient(circle, rgba(38, 129, 255, .60), rgba(44, 74, 238, .22) 48%, transparent 72%);
+}
+
+.contact-wrapper::after {
+    right: -9%;
+    bottom: -23%;
+    background: radial-gradient(circle, rgba(122, 75, 255, .56), rgba(35, 177, 255, .22) 50%, transparent 74%);
+    animation-delay: -4s;
+}
+
+.contact-info,
+.contact-form-wrapper {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(203, 220, 255, .25);
+    border-radius: 26px;
+    background: linear-gradient(145deg,
+            rgba(173, 197, 255, .16) 0%,
+            rgba(92, 111, 181, .13) 40%,
+            rgba(25, 37, 91, .34) 100%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    backdrop-filter: blur(22px) saturate(150%);
+    box-shadow:
+        0 22px 65px rgba(3, 8, 34, .31),
+        inset 0 1px 0 rgba(255, 255, 255, .21),
+        inset 0 -1px 0 rgba(255, 255, 255, .04);
+    transition: border-color .4s ease, box-shadow .4s ease, transform .45s cubic-bezier(.22, 1, .36, 1);
+    animation: contactGlassEnter .85s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.contact-info {
+    animation-delay: .06s;
+}
+
+.contact-form-wrapper {
+    animation-delay: .19s;
+}
+
+/* Subtle reflection across the top edge of each glass panel. */
+.contact-info::before,
+.contact-form-wrapper::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(234, 246, 255, .7), transparent);
+    pointer-events: none;
+}
+
+.contact-info>*,
+.contact-form-wrapper>* {
+    position: relative;
+    z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .contact-info:hover,
+    .contact-form-wrapper:hover {
+        transform: translateY(-5px);
+        border-color: rgba(164, 203, 255, .46);
+        box-shadow: 0 30px 78px rgba(1, 6, 38, .39),
+            0 0 38px rgba(80, 110, 245, .13),
+            inset 0 1px 0 rgba(255, 255, 255, .25);
+    }
+}
+
+.contact-info-header h3,
+.contact-form-wrapper h3,
+.contact-form-wrapper h2 {
+    color: #fff;
+}
+
+.contact-info-header p,
+.contact-item p,
+.contact-item a,
+.contact-social>span {
+    color: #e0e8ff;
+}
+
+.contact-icon {
+    border: 1px solid rgba(180, 207, 255, .24);
+    border-radius: 13px;
+    background: linear-gradient(135deg, rgba(66, 154, 255, .25), rgba(142, 92, 246, .28));
+    color: #d9e7ff;
+    box-shadow: inset 0 1px rgba(255, 255, 255, .18), 0 7px 23px rgba(50, 90, 234, .12);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.contact-item:hover .contact-icon {
+    transform: translateY(-3px) rotate(-4deg);
+    box-shadow: 0 8px 25px rgba(77, 114, 255, .29);
+}
+
+.contact-social a {
+    border: 1px solid rgba(205, 221, 255, .2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .09);
+}
+
+/* Glass form controls: readable without a solid white card. */
+.contact-form-wrapper .form-group label {
+    color: #e8edff;
+    font-size: 11px;
+}
+
+.contact-form-wrapper .form-group input,
+.contact-form-wrapper .form-group textarea {
+    border: 1px solid rgba(205, 220, 255, .23);
+    border-radius: 12px;
+    background: rgba(6, 16, 59, .31);
+    color: #ffffff;
+    font-size: 13px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: background .3s ease, border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+.contact-form-wrapper .form-group input::placeholder,
+.contact-form-wrapper .form-group textarea::placeholder {
+    color: rgba(218, 229, 255, .6);
+}
+
+.contact-form-wrapper .form-group input:focus,
+.contact-form-wrapper .form-group textarea:focus {
+    background: rgba(29, 43, 107, .42);
+    border-color: #92caff;
+    box-shadow: 0 0 0 3px rgba(89, 159, 255, .16),
+        0 0 23px rgba(89, 137, 255, .17);
+    transform: translateY(-2px);
+}
+
+.contact-submit {
+    position: relative;
+    overflow: hidden;
+    min-height: 46px;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #486bee, #7364e7 53%, #9463e7);
+    box-shadow: 0 10px 30px rgba(74, 89, 230, .24);
+    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+
+.contact-submit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-145%) skewX(-22deg);
+    width: 60%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
+    transition: transform .7s ease;
+    pointer-events: none;
+}
+
+.contact-submit:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.09);
+    box-shadow: 0 16px 34px rgba(88, 104, 248, .38);
+}
+
+.contact-submit:hover::before {
+    transform: translateX(245%) skewX(-22deg);
+}
+
+.contact-submit:focus-visible,
+.contact-social a:focus-visible {
+    outline: 2px solid #b6e0ff;
+    outline-offset: 3px;
+}
+
+@keyframes contactGlassEnter {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes contactGlowDrift {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(25px, -18px, 0) scale(1.12);
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        gap: 22px;
+    }
+
+    .contact-wrapper::before,
+    .contact-wrapper::after {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .contact-heading {
+        margin-bottom: 30px;
+    }
+
+    .contact-heading h2 {
+        font-size: clamp(27px, 8vw, 34px);
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        padding: 23px 20px;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(16px) saturate(140%);
+        backdrop-filter: blur(16px) saturate(140%);
+    }
+
+    .contact-wrapper::before,
+    .contact-wrapper::after {
+        width: 85vw;
+        filter: blur(50px);
+        opacity: .5;
+    }
+
+    .contact-form-wrapper .form-group input {
+        min-height: 46px;
+    }
+
+    .contact-form-wrapper .form-group textarea {
+        min-height: 125px;
+    }
+
+    .contact-item a,
+    .contact-item p {
+        overflow-wrap: anywhere;
+        line-height: 1.6;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-wrapper::before,
+    .contact-wrapper::after,
+    .contact-info,
+    .contact-form-wrapper {
+        animation: none !important;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        opacity: 1;
+        transform: none;
+    }
+
+    .contact-icon,
+    .contact-submit,
+    .contact-form-wrapper .form-group input,
+    .contact-form-wrapper .form-group textarea {
+        transition: none !important;
+    }
+}

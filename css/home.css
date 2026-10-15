@@ -1670,3 +1670,95 @@ body.modal-open {
     background-size: 110px 110px, 110px 110px, auto, auto;
     background-repeat: repeat, repeat, no-repeat, no-repeat;
 }
+
+
+/* =========================================================
+   GENFES — GLASSMORPHISM / SOFT GLOW DESIGN SYSTEM
+   Layer tambahan: CSS asli, konten, dan interaksi dipertahankan.
+   Efek disesuaikan untuk mouse, layar sentuh, dan reduced motion.
+========================================================= */
+
+/* Home: memoles kartu tanpa mengganti gradasi antarseksi dan animasi reveal. */
+.about-story,
+.about-statistics .stat-card,
+.about-advantages .advantage-card,
+.services-section .service-card {
+    border: 1px solid rgba(197, 207, 255, .25);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(104, 119, 207, .18), rgba(42, 42, 117, .31) 58%, rgba(26, 35, 91, .28));
+    -webkit-backdrop-filter: blur(14px) saturate(145%);
+    backdrop-filter: blur(14px) saturate(145%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13),
+        0 17px 42px rgba(1, 6, 36, .21), 0 0 24px rgba(102, 127, 255, .045);
+}
+
+.about-gallery .about-image,
+.about-image-main,
+.about-image-small {
+    border-radius: 18px;
+    border: 1px solid rgba(194, 207, 255, .18);
+    box-shadow: 0 14px 38px rgba(3, 8, 43, .22), 0 0 20px rgba(94, 128, 244, .075);
+}
+
+.about-highlight {
+    background: rgba(90, 111, 214, .14);
+    border: 1px solid rgba(193, 208, 255, .17);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-radius: 13px;
+}
+
+.services-section .service-icon {
+    background: linear-gradient(135deg, rgba(114, 139, 255, .88), rgba(113, 75, 222, .85));
+    box-shadow: 0 10px 24px rgba(106, 124, 250, .23), inset 0 1px 0 rgba(255, 255, 255, .20);
+}
+
+.contact-cta-content {
+    border: 1px solid rgba(193, 207, 255, .23);
+    border-radius: 24px;
+    padding: clamp(25px, 4vw, 46px);
+    background: linear-gradient(130deg, rgba(105, 122, 220, .17), rgba(37, 45, 117, .26));
+    -webkit-backdrop-filter: blur(15px) saturate(140%);
+    backdrop-filter: blur(15px) saturate(140%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13),
+        0 18px 50px rgba(0, 5, 30, .22), 0 0 44px rgba(89, 128, 255, .10);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    /* Hover ditambahkan ke state visible agar tidak mengganggu animasi masuk. */
+    .about-story:hover,
+    .about-statistics .stat-card:hover,
+    .about-advantages .advantage-card:hover,
+    .services-section .service-card.service-card-visible:hover {
+        border-color: rgba(192, 210, 255, .55);
+        background: linear-gradient(145deg, rgba(109, 135, 235, .29), rgba(48, 53, 134, .36));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22),
+            0 24px 53px rgba(2, 7, 38, .30),
+            0 0 34px rgba(76, 151, 255, .15), 0 0 48px rgba(146, 97, 250, .09);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-cta-content {
+        padding: 25px 19px;
+        border-radius: 19px;
+    }
+
+    .about-story,
+    .about-statistics .stat-card,
+    .about-advantages .advantage-card,
+    .services-section .service-card {
+        border-radius: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-story,
+    .about-statistics .stat-card,
+    .about-advantages .advantage-card,
+    .services-section .service-card {
+        transition: none !important;
+    }
+}

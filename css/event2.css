@@ -985,3 +985,83 @@
         max-width: 280px;
     }
 }
+
+
+/* =========================================================
+   GENFES — GLASSMORPHISM / SOFT GLOW DESIGN SYSTEM
+   Layer tambahan: CSS asli, konten, dan interaksi dipertahankan.
+   Efek disesuaikan untuk mouse, layar sentuh, dan reduced motion.
+========================================================= */
+
+/* Event: tampilan kaca transparan, poster tetap tajam dan utuh. */
+.events-hero,
+.upcoming-events,
+.programs-section {
+    --glass-edge: rgba(195, 208, 255, .24);
+}
+
+.upcoming-events .event-card,
+.featured-event .featured-event-card,
+.programs-section .program-card {
+    border: 1px solid var(--glass-edge);
+    background: linear-gradient(145deg, rgba(105, 112, 205, .20), rgba(34, 43, 113, .34) 56%, rgba(34, 39, 96, .28));
+    -webkit-backdrop-filter: blur(15px) saturate(145%);
+    backdrop-filter: blur(15px) saturate(145%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13),
+        0 18px 44px rgba(3, 8, 39, .24), 0 0 35px rgba(72, 119, 255, .055);
+    transition: transform .45s cubic-bezier(.22, 1, .36, 1),
+        border-color .35s ease, box-shadow .45s ease, background .4s ease;
+}
+
+/* Gambar poster tidak diberi blur; bingkai kaca menambah kontras. */
+.upcoming-events .event-card-image {
+    background: linear-gradient(145deg, rgba(38, 45, 116, .54), rgba(18, 24, 66, .48));
+}
+
+.upcoming-events .event-date {
+    background: rgba(16, 23, 77, .70);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-color: rgba(225, 231, 255, .33);
+    box-shadow: 0 7px 22px rgba(4, 7, 33, .27), inset 0 1px 0 rgba(255, 255, 255, .17);
+}
+
+.programs-section .program-icon {
+    background: linear-gradient(135deg, rgba(126, 139, 255, .8), rgba(91, 71, 204, .85));
+    box-shadow: 0 10px 26px rgba(75, 96, 245, .24), inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .upcoming-events .event-card:hover,
+    .featured-event .featured-event-card:hover,
+    .programs-section .program-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(186, 210, 255, .54);
+        background: linear-gradient(145deg, rgba(108, 124, 230, .30), rgba(48, 57, 137, .43) 55%, rgba(32, 42, 105, .36));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .21),
+            0 25px 54px rgba(3, 8, 40, .37),
+            0 0 35px rgba(82, 146, 255, .18), 0 0 60px rgba(151, 95, 255, .13);
+    }
+}
+
+/* Pertahankan horizontal-swipe Program dan kartu poster compact di HP. */
+@media (max-width: 600px) {
+    .programs-section .program-card {
+        background: linear-gradient(150deg, rgba(87, 93, 187, .25), rgba(27, 36, 105, .43));
+    }
+
+    .upcoming-events .event-card {
+        max-width: 300px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .upcoming-events .event-card,
+    .featured-event .featured-event-card,
+    .programs-section .program-card,
+    .programs-section .program-icon {
+        transition: none !important;
+    }
+}

@@ -1608,3 +1608,68 @@
         transition: none;
     }
 }
+
+
+/* =========================================================
+   GENFES — GLASSMORPHISM / SOFT GLOW DESIGN SYSTEM
+   Layer tambahan: CSS asli, konten, dan interaksi dipertahankan.
+   Efek disesuaikan untuk mouse, layar sentuh, dan reduced motion.
+========================================================= */
+
+/* News: kaca editorial. Animasi scroll dan tombol Baca Selengkapnya tetap. */
+.news-featured .featured-news-card,
+.news-featured .article-detail {
+    border: 1px solid rgba(194, 209, 255, .29);
+    background: linear-gradient(145deg, rgba(112, 119, 220, .18), rgba(35, 42, 112, .34) 56%, rgba(21, 30, 85, .33));
+    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    backdrop-filter: blur(16px) saturate(145%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14),
+        0 22px 55px rgba(3, 8, 40, .28), 0 0 40px rgba(82, 133, 255, .08);
+}
+
+.news-featured .featured-news-image {
+    background: rgba(14, 21, 74, .30);
+}
+
+.news-featured .article-slideshow {
+    border: 1px solid rgba(188, 203, 255, .28);
+    box-shadow: 0 20px 45px rgba(1, 6, 35, .28), 0 0 28px rgba(82, 130, 255, .10);
+}
+
+.news-featured .news-category {
+    background: rgba(146, 119, 232, .19);
+    border-color: rgba(213, 194, 255, .35);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.news-featured .article-back {
+    background: rgba(128, 139, 229, .13);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .09);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .news-featured .featured-news-card:hover {
+        border-color: rgba(191, 208, 255, .55);
+        background: linear-gradient(145deg, rgba(116, 139, 235, .27), rgba(40, 51, 124, .40));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .20),
+            0 29px 65px rgba(2, 7, 38, .34),
+            0 0 37px rgba(87, 148, 255, .18), 0 0 60px rgba(146, 91, 250, .10);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .news-featured .featured-news-card,
+    .news-featured .article-detail {
+        border-radius: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news-featured .featured-news-card {
+        transition: none !important;
+    }
+}

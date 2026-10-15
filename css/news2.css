@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
+
+/*
+  FONT BUNCH ASLI (OPSIONAL)
+  CSS ini langsung berjalan dengan Google Font Bowlby One sebagai alternatif
+  yang mirip. Kalau kamu sudah mempunyai lisensi/file font Bunch, letakkan
+  Bunch.woff2 di assets/fonts/ lalu AKTIFKAN @font-face di bawah:
+
+  @font-face {
+      font-family: "GENFES Bunch";
+      src: url("../assets/fonts/Bunch.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+  }
+
+  Tidak ada file font yang disertakan dalam paket ini.
+*/
+
 /* =====================================================
    GENFES NEWS & ARTICLE
    Premium Editorial Style
@@ -1671,5 +1691,275 @@
 @media (prefers-reduced-motion: reduce) {
     .news-featured .featured-news-card {
         transition: none !important;
+    }
+}
+
+
+/* ============================================================
+   GENFES — BUNCH-STYLE DISPLAY TYPOGRAPHY + GRADIENT TITLES
+   Layer ini HANYA menyentuh typography, warna judul dan
+   efek glow judul. Desain glass, video, kartu & JS dipertahankan.
+   ============================================================ */
+:root {
+    --genfes-display-font: "GENFES Bunch", "Bowlby One", sans-serif;
+    --genfes-ui-font: "Montserrat", "Inter", sans-serif;
+    --genfes-title-gradient: linear-gradient(110deg,
+            #ffffff 0%, #ece7ff 22%, #c3a8ff 48%,
+            #9182ff 72%, #77c7ff 100%);
+    --genfes-title-accent: linear-gradient(105deg,
+            #ded5ff 0%, #a889ff 43%, #72caff 100%);
+}
+
+@keyframes genfesTitleShimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Menonaktifkan animasi teks bila pengguna mengurangi gerakan. */
+    .genfes-title-motion-safe {
+        animation: none !important;
+    }
+}
+
+/* Judul besar, font display bold, dan gradasi putih–ungu–biru. */
+.news-hero h1,
+.news-section-heading h2 {
+    font-family: var(--genfes-display-font);
+    font-weight: 400;
+    /* Font display umumnya sudah ekstra tebal. */
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+    background-image: var(--genfes-title-gradient);
+    background-size: 185% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 4px 17px rgba(120, 109, 251, .14));
+    animation: genfesTitleShimmer 12s ease-in-out infinite;
+}
+
+/* Kata aksen punya gradient ungu–cyan agar terasa seperti neon glow. */
+.news-hero h1 span,
+.news-section-heading h2 span {
+    background-image: var(--genfes-title-accent);
+    background-size: 150% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Judul kartu sengaja menggunakan Montserrat: lebih mudah dibaca. */
+.featured-news-content h3,
+.article-body h1 {
+    font-family: var(--genfes-ui-font);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.news-hero h1 {
+    font-size: clamp(38px, 4.2vw, 61px);
+}
+
+.news-section-heading h2 {
+    font-size: clamp(30px, 3.6vw, 43px);
+}
+
+/* Judul detail artikel panjang: gunakan Montserrat agar tetap nyaman dibaca. */
+.article-body h1 {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .news-hero h1 {
+        font-size: clamp(29px, 7.4vw, 39px);
+        overflow-wrap: break-word;
+    }
+
+    .news-section-heading h2 {
+        font-size: clamp(27px, 6.9vw, 34px);
+    }
+}
+
+@media (max-width: 380px) {
+    .news-hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .news-hero h1,
+    .news-section-heading h2 {
+        animation: none;
+        background-position: 50% 50%;
+    }
+}
+
+
+/* =====================================================================
+   GENFES — FINAL CONSISTENT TYPOGRAPHY (HOME / NEWS / EVENT / CONTACT)
+   Visual: rounded 'bubble' display headings (Fredoka), soft raised
+   lavender gradient, and regular Montserrat interface text.
+   Style only: preserved HTML, JavaScript, video, glassmorphism,
+   scroll animations, footer structure, and mobile card/carousel layout.
+   ===================================================================== */
+:root {
+    --genfes-display-font: "Fredoka", "Arial Rounded MT Bold", sans-serif;
+    --genfes-ui-font: "Montserrat", "Inter", sans-serif;
+    --genfes-title-gradient: linear-gradient(160deg,
+            #ffffff 0%, #f2e9ff 22%, #d9c4ff 44%,
+            #b299ff 73%, #8fc5ff 100%);
+    --genfes-title-accent: linear-gradient(145deg,
+            #f2eaff 0%, #d8c0ff 35%, #ad93ff 72%, #86c7ff 100%);
+}
+
+/* Navbar, body, footer and button copy: Montserrat, at their existing sizes. */
+body,
+button,
+input,
+textarea,
+select,
+.navbar,
+.footer {
+    font-family: var(--genfes-ui-font);
+}
+
+body {
+    font-weight: 400;
+}
+
+.navbar .nav-link,
+.navbar .nav-login {
+    font-family: var(--genfes-ui-font);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+/* Consistent heading material (rounded, gradient, subtle 3D relief). */
+.news-hero h1,
+.news-section-heading h2 {
+    font-family: var(--genfes-display-font);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.22;
+    background-image: var(--genfes-title-gradient);
+    background-size: 165% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 0.3px rgba(255, 248, 255, .16);
+    filter: drop-shadow(0 2px 0 rgba(238, 217, 255, .18)) drop-shadow(0 4px 0 rgba(64, 41, 139, .30)) drop-shadow(0 9px 17px rgba(18, 20, 82, .22));
+    overflow-wrap: break-word;
+}
+
+/* Individual accent words keep the same family, with a soft blue-violet gradient. */
+.news-hero h1 span,
+.news-section-heading h2 span {
+    font-family: inherit;
+    background-image: var(--genfes-title-accent);
+    background-size: 150% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Article, card, and contact panel headings remain a readable UI font. */
+.featured-news-content h3,
+.article-body h1 {
+    font-family: var(--genfes-ui-font);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+}
+
+/* Body copy is regular: no surprise bolding or larger sizes. */
+.news-hero p,
+.featured-news-content p,
+.article-body p {
+    font-family: var(--genfes-ui-font);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .navbar .nav-login {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .news-hero h1,
+    .news-section-heading h2 {
+        animation: none;
+        background-position: 50% 50%;
+    }
+}
+
+/* NEWS: second line is separated without overlapping the first one. */
+.news-hero h1 {
+    font-size: clamp(38px, 4.3vw, 62px);
+    line-height: 1.23;
+    margin-bottom: 25px;
+}
+
+.news-hero h1 span {
+    display: block;
+    margin-top: clamp(10px, 1vw, 16px);
+    line-height: 1.2;
+}
+
+.news-section-heading h2 {
+    font-size: clamp(30px, 3.6vw, 43px);
+}
+
+.news-hero p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .news-hero h1 {
+        font-size: clamp(30px, 8vw, 41px);
+        line-height: 1.23;
+    }
+
+    .news-hero h1 span {
+        margin-top: 10px;
+    }
+
+    .news-section-heading h2 {
+        font-size: clamp(27px, 7vw, 34px);
+    }
+
+    .news-hero p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 380px) {
+    .news-hero h1 {
+        font-size: 29px;
     }
 }

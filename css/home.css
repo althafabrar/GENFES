@@ -1615,3 +1615,58 @@ body.modal-open {
 .about-statistics:hover .stats-track {
     animation-play-state: paused;
 }
+
+/* =====================================================
+   HOME — SEAMLESS SECTION BACKGROUNDS
+   Hanya background: tidak mengubah layout / animasi / konten.
+   Transisi warna: Hero -> About -> Services -> Contact -> Footer
+   ===================================================== */
+
+/* Hero: video tetap terlihat, bagian bawah menyatu ke About. */
+.hero {
+    background: #11145c;
+}
+
+.hero-overlay {
+    background: linear-gradient(180deg,
+            rgba(17, 20, 92, 0.35) 0%,
+            rgba(17, 20, 92, 0.50) 40%,
+            rgba(17, 20, 92, 0.78) 77%,
+            #11145c 100%);
+}
+
+/* About: mulai dari warna akhir Hero, mengalir ke Services. */
+.about-section {
+    background-color: #11145c;
+    background-image:
+        linear-gradient(rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 40%, rgba(112, 90, 205, 0.13), transparent 70%),
+        linear-gradient(180deg, #11145c 0%, #131652 65%, #141650 100%);
+    background-size: 110px 110px, 110px 110px, auto, auto;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+/* Services: grid dan palet disamakan, warna atas sama dengan About. */
+.services-section {
+    background-color: #141650;
+    background-image:
+        linear-gradient(rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 85% 35%, rgba(118, 86, 214, 0.16), transparent 65%),
+        linear-gradient(180deg, #141650 0%, #151650 65%, #17164f 100%);
+    background-size: 110px 110px, 110px 110px, auto, auto;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+/* Contact: menyambung dari Services hingga warna awal footer global. */
+.contact-cta {
+    background-color: #17164f;
+    background-image:
+        linear-gradient(rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(115, 225, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 15%, rgba(118, 86, 214, 0.17), transparent 68%),
+        linear-gradient(180deg, #17164f 0%, #171845 55%, #111827 100%);
+    background-size: 110px 110px, 110px 110px, auto, auto;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
